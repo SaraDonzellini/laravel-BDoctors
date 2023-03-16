@@ -1,4 +1,4 @@
-        $users = [
+        $doctors = [
             [
                 'address' => 'via Veneto, 3',
                 'cv' => '',

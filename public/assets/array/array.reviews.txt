@@ -1,0 +1,38 @@
+$reviews = [
+    [
+        'name' => 'Mario',
+        'surname' => 'Rossi',
+        'text' => 'Ottimo prodotto, lo consiglio vivamente!',
+        'vote' => 4.5
+    ],
+    [
+        'name' => 'Giuseppe',
+        'surname' => 'Verdi',
+        'text' => 'Non sono soddisfatto del prodotto, troppo costoso.',
+        'vote' => 2.0
+    ],
+    [
+        'name' => 'Luigi',
+        'surname' => 'Bianchi',
+        'text' => 'Prodotto di media qualità, nulla di eccezionale.',
+        'vote' => 3.0
+    ],
+    [
+        'name' => 'Paolo',
+        'surname' => 'Neri',
+        'text' => 'Ho comprato questo prodotto e ne sono rimasto molto soddisfatto!',
+        'vote' => 4.8
+    ],
+    [
+        'name' => 'Giovanni',
+        'surname' => 'Verde',
+        'text' => 'Non mi piace per niente, non lo consiglio a nessuno!',
+        'vote' => 1.0
+    ],
+    [
+        'name' => 'Marco',
+        'surname' => 'Buti',
+        'text' => 'Prodotto di qualità, superiore alle mie aspettative.',
+        'vote' => 4.5
+    ]
+];

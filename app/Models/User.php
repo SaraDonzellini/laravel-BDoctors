@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return 'slug';
     }
+
+    public function doctor()
+    {
+       return $this->belongsTo(Doctor::class);
+    }
 }

@@ -1,0 +1,86 @@
+$specialization = [
+    [
+        'name' => 'Medico di base',
+        'color' => #D6F8D6
+    ],
+    [
+        'name' => 'Ginecologo',
+        'color' => #7FC6A4
+    ],
+    [
+        'name' => 'Ortopedico',
+        'color' => #A6C48A
+    ],
+    [
+        'name' => 'Dermatologo',
+        'color' => #F6E7CB
+    ],
+    [
+        'name' => 'Psicologo',
+        'color' => #DD9787
+    ],
+    [
+        'name' => 'Oculista',
+        'color' => #74D3AE
+    ],
+    [
+        'name' => 'Urologo',
+        'color' => #EDE6E3
+    ],
+    [
+        'name' => 'Otorino',
+        'color' => #DADAD9
+    ],
+    [
+        'name' => 'Dentista',
+        'color' => #5BC3EB
+    ],
+    [
+        'name' => 'Endocrinologo',
+        'color' => #EEE0CB
+    ],
+    [
+        'name' => 'Neurologo',
+        'color' => #BAA898
+    ],
+    [
+        'name' => 'Fisioterapista',
+        'color' => #BFD7EA
+    ],
+    [
+        'name' => 'Pediatra',
+        'color' => #FAF8D4
+    ],
+    [
+        'name' => 'Psicoterapeuta',
+        'color' => #EBDCCB
+    ],
+    [
+        'name' => 'Andrologo',
+        'color' => #C3BAAA
+    ],
+    [
+        'name' => 'Proctologo',
+        'color' => #B2A3B5
+    ],
+    [
+        'name' => 'Logopedista',
+        'color' => #B098A4
+    ],
+    [
+        'name' => 'Medico competente',
+        'color' => #DBD9DB
+    ],
+    [
+        'name' => 'Sessuologo',
+        'color' => #E5EBEA
+    ],
+    [
+        'name' => 'Chirurgo pediatrico',
+        'color' => #F0A202
+    ],
+    [
+        'name' => 'Medico genetista',
+        'color' => #DB995A
+    ],
+]

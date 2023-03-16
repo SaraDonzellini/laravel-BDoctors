@@ -1,4 +1,4 @@
-$specialization = [
+$specializations = [
     [
         'name' => 'Medico di base',
         'color' => #D6F8D6

@@ -159,6 +159,13 @@ class UsersSeeder extends Seeder
             ],
         ];
 
+        $admin = new User();
+        $admin->name = 'Admin';
+        $admin->surname = 'Admin';
+        $admin->email = 'admin@doctors.com';
+        $admin->password = Hash::make('12345678');
+        $admin->save();
+        
         foreach ($users as $user) {
             $newUser = new User();
             $newUser->name = $user['name'];

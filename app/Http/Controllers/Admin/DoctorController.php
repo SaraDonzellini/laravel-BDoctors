@@ -91,7 +91,7 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        
+        $doctors = Doctor::with('user')->get();
         return view('admin.doctors.show', compact('doctor'));
     }
 
@@ -122,7 +122,7 @@ class DoctorController extends Controller
         };
         
         $data['photo'] = Storage::put('imgs/', $data['photo']);
-        if ($doctor->isImageUrl()){
+        if (!str_starts_with($doctor->photo, 'http')){
             Storage::delete($doctor->photo);
         }
 
@@ -143,10 +143,10 @@ class DoctorController extends Controller
 
         $doctor->delete();
 
-        if ($doctor->isImageUrl()){
+        if (!str_starts_with($doctor->photo, 'http')){
             Storage::delete($doctor->photo);
         }
 
-        return redirect()->route('admin.authors.index')->with('message', "Il profilo è stato cancellato")->with('alert-type', 'danger');
+        return redirect()->route('admin.doctors.index')->with('message', "Il profilo è stato cancellato")->with('alert-type', 'danger');
     }
 }

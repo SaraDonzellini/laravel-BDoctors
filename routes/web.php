@@ -1,7 +1,7 @@
 <?php
-
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\SponsorshipController as SponsorshipController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\ReviewController;
 use Illuminate\Support\Facades\Route;
@@ -21,9 +21,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// // Route::get('/dashboard', function () {
-// //     return view('dashboard');
-// // })->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])
+->prefix('admin')
+->name('admin.')
+->group( function(){
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/sponsorships', SponsorshipController::class);
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -46,7 +46,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link {{ (Route::currentRouteName() == 'admin.messages.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.messages.index') }}">{{ __('Messages') }}</a>
+                        </li>
                     </ul>
+
+                    
+                        
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

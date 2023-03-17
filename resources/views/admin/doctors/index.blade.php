@@ -3,7 +3,11 @@
 @section('content')
     <div class="container">
         <div class="row">
-
+            @if (session('message'))
+                <div class="alert alert-{{ session('alert-type') }}">
+                    {{ session('message') }}
+                </div>
+            @endif
             <table class="table mt-3">
                 <thead>
                     <tr>
@@ -27,7 +31,11 @@
                             <td>{{ $doctor->user->name }}</td>
                             <td>{{ $doctor->user->surname }}</td>
                             <td>{{ $doctor->phone }}</td>
-                            <td>@foreach ($doctor->specializations as $specialization)#{{ $specialization->title }}@endforeach</td>
+                            <td>
+                                @foreach ($doctor->specializations as $specialization)
+                                    #{{ $specialization->title }}
+                                @endforeach
+                            </td>
                             <td>todo: toggle</td>
                             <td class="text-end">
                                 {{-- View --}}

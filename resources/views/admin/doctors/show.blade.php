@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -7,8 +7,8 @@
                 <div class="text my-4">
                     <span>Id: {{ $doctor->id }}</span>
                     <h3 class="card-title fw-bold my-3">{{ $doctor->user->name }} {{ $doctor->user->surname }}</h3>
-                    <p>Birthdate: {{ $doctor->birthdate }}</p>
-                    <p>BIO <br> {{ $doctor->biography }}</p>
+                    <img :src="$doctor->photo" alt="">
+                    <p>BIO <br> {{ $doctor->bio }}</p>
                 </div>
 
                 <div class="secondary-actions mb-2">

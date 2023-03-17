@@ -32,11 +32,13 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('messages', MessageController::class);
 });
 
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
 Route::middleware(['auth', 'verified'])
 ->prefix('admin')
 ->name('admin.')
 ->group( function(){
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    
     Route::resource('/sponsorships', SponsorshipController::class);
 });
 

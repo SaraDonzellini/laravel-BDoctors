@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Message;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -14,7 +15,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-        return view('admin.message.index');
+        $messages = Message::all();
+        return view('admin.messages.index', compact('messages'));
     }
 
     /**
@@ -24,7 +26,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.messages.create');
     }
 
     /**
@@ -41,35 +43,12 @@ class MessageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Message $message
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Message $message)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        return view('admin.messages.show', compact('message'));
     }
 
     /**

@@ -26,10 +26,6 @@
                 <td>{{ $review->text }}</td>
                 <td>{{ $review->vote }}</td>
                 <td>
-                    <a href="{{ route('admin.reviews.show', $review->id) }}" class="btn btn-sm btn-primary">
-                        Show
-                    </a>
-
                     <a href="{{ route('admin.reviews.edit', $review->id) }}" class="btn btn-sm btn-success">
                         Edit
                     </a>

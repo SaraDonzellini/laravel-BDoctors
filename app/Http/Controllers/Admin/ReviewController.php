@@ -15,6 +15,7 @@ class ReviewController extends Controller
      */
 
     public $validationRules = [
+        'user_id' => 'required',
         'name' => 'required|string|min:3|max:255',
         'surname' => 'required|string|min:3|max:255',
         'text' => 'required|min:10',

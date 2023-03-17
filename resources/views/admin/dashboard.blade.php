@@ -19,6 +19,8 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+
+                <a href="{{route("admin.sponsorships.index")}}" class="btn btn-success btn-sm" type="button">Entra nel pannello di controllo</a>
             </div>
         </div>
     </div>

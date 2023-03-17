@@ -90,7 +90,7 @@ class ReviewController extends Controller
 
         $review->update($data);
 
-        return redirect()->route('admin.reviews.show', compact('review'));
+        return redirect()->route('admin.reviews.index', compact('review'));
     }
 
     /**

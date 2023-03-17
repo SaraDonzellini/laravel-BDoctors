@@ -49,6 +49,9 @@
                         <li class="nav-item">
                             <a class="nav-link {{ (Route::currentRouteName() == 'admin.doctors.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.doctors.index') }}">{{ __('Doctors') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ (Route::currentRouteName() == 'admin.reviews.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.reviews.index') }}">{{ __('Reviews') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

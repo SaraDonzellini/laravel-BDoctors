@@ -21,10 +21,9 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
 
             $table->primary(['sponsorship_id', 'user_id']);
-            
-            $table->date('ending_date');
+
+            $table->date('ending_date')->nullable();
             $table->timestamps();
-            
         });
     }
 

@@ -55,6 +55,11 @@ class User extends Authenticatable
         return $this->belongsTo(Doctor::class);
     }
 
+    public function sponsorhips()
+    {
+        return $this->belongsToMany(Sponsorship::class);
+    }
+
     public function reviews()
     {
         return $this->belongsTo(Review::class);

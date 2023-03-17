@@ -60,7 +60,7 @@ class ReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Review $review)
     {
         return view('admin.reviews.show', compact('review'));
     }
@@ -71,7 +71,7 @@ class ReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Review $review)
     {
         return view('admin.reviews.edit',  compact('review'));
     }

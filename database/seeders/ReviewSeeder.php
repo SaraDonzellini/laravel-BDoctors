@@ -57,7 +57,7 @@ class ReviewSeeder extends Seeder
 
         foreach ($reviews as $review) {
             $newReview = new Review();
-            $newReview->user_id =User::inRandomOrder()->first()->id;
+            $newReview->user_id = User::inRandomOrder()->first()->id;
             $newReview->name = $review['name'];
             $newReview->surname = $review['surname'];
             $newReview->text = $review['text'];

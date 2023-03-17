@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             DoctorSeeder::class,
             ReviewSeeder::class,
             SpecializationSeeder::class,
-            DoctorSpecializationSeeder::class
+            DoctorSpecializationSeeder::class,
+            MessageSeeder::class
         ]);
     }
 }

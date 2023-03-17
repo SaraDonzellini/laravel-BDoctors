@@ -15,6 +15,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- Link Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
 </head>
@@ -46,6 +49,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link {{ (Route::currentRouteName() == 'admin.messages.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.messages.index') }}">{{ __('Messages') }}</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link {{ (Route::currentRouteName() == 'admin.doctors.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.doctors.index') }}">{{ __('Doctors') }}</a>
                         </li>
@@ -53,6 +60,10 @@
                             <a class="nav-link {{ (Route::currentRouteName() == 'admin.reviews.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.reviews.index') }}">{{ __('Reviews') }}</a>
                         </li>
                     </ul>
+
+                    
+                        
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

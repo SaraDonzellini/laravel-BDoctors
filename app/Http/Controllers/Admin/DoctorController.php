@@ -21,8 +21,7 @@ class DoctorController extends Controller
         'address.max' => 'L\'indirizzo non può contenere più di :max caratteri',
         'phone.required' => 'Il numero di telefono è obbligatorio',
         'phone.numeric' => 'Il campo telefono deve contenere solo numeri',
-        'phone.max' => 'Il numero di telefono non può contenere più di :max caratteri',
-        'performances.required' => 'Selezionare almeno una prestazione'
+        // 'phone.max' => 'Il numero di telefono non può contenere più di :max caratteri',
     ];
 
     public $validationRules = [
@@ -30,8 +29,7 @@ class DoctorController extends Controller
         'cv' => 'required|image',
         'photo' => 'nullable|image',
         'address' => 'required|min:3|max:100',
-        'phone' => 'required|numeric|max:30',
-        'performances' => 'required|array',
+        'phone' => 'required|numeric',
         'visibility' => 'nullable',
     ];
 
@@ -56,8 +54,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        $performances = ['Visita specialistica', 'Consulenza', 'Diagnosi', 'Certificazione'];
-        return view('admin.doctors.create', ["doctor" => new Doctor(), 'performances' => $performances]);
+        return view('admin.doctors.create', ["doctor" => new Doctor()]);
     }
 
     /**
@@ -74,6 +71,7 @@ class DoctorController extends Controller
         };
         
         $data['photo'] = Storage::put('imgs/', $data['photo']);
+        $data['cv'] = Storage::put('cv/', $data['cv']);
 
         $newDoctor = new Doctor();
         $newDoctor->fill($data);
@@ -103,8 +101,7 @@ class DoctorController extends Controller
      */
     public function edit(Doctor $doctor)
     {
-        $performances = ['Visita specialistica', 'Consulenza', 'Diagnosi', 'Certificazione'];
-        return view('admin.doctors.edit', ["doctor" => $doctor, 'performances' => $performances]);
+        return view('admin.doctors.edit', ["doctor" => $doctor]);
     }
 
     /**

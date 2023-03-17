@@ -5,6 +5,7 @@ use App\Models\Doctor;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
 class DoctorSeeder extends Seeder
 {
@@ -13,7 +14,7 @@ class DoctorSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         $doctors = [
             [
@@ -223,6 +224,7 @@ class DoctorSeeder extends Seeder
             Mi occupo della prevenzione, della valutazione e della cura delle malattie che coinvolgono la popolazione anziana (Malattia di Alzheimer e Demenze, Malattia di Parkinson e Disturbi del Movimento, Malattie Cerebrovascolari,valutazione della non autosufficienza con certificazione per pensione d\'invalidità e di accompagno e legge 104, completi di scale di valutazione ),effettuando Test per Disturbi della Memoria e della Cognitività, dell\'Umore e del Comportamento, affrontando non solo le problematiche cliniche acute, post-acute e croniche , ma anche quelle psicologiche e socio-economiche.'
             ],
         ]; 
+        $performances = ['Visita specialistica', 'Consulenza', 'Diagnosi', 'Certificazione'];
 
         foreach ($doctors as $doctor) {
             $newDoctor = new Doctor();
@@ -232,7 +234,7 @@ class DoctorSeeder extends Seeder
             $newDoctor->photo = $doctor['photo'];
             $newDoctor->address = $doctor['address'];
             $newDoctor->phone = $doctor['phone'];
-            $newDoctor->performances = $doctor['performances'];
+            $newDoctor->performances = $faker->randomElement($performances);
             $newDoctor->visibility = true;
             $newDoctor->save();
         }

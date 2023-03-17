@@ -44,9 +44,9 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        $doctors = Doctor::paginate(10);
-        return view('admin.doctors.index', compact('doctors', 'users'));
+        // $users = User::all();
+        $doctors = Doctor::with('user')->get();
+        return view('admin.doctors.index', compact('doctors'));
     }
 
     /**
@@ -91,6 +91,7 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
+        
         return view('admin.doctors.show', compact('doctor'));
     }
 

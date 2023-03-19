@@ -18,49 +18,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
-    Route::resource('messages', MessageController::class);
-});
-
-
-Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
-    Route::resource('messages', MessageController::class);
-});
-
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::middleware(['auth', 'verified'])
-->prefix('admin')
-->name('admin.')
-->group( function(){
-    
-    Route::resource('/sponsorships', SponsorshipController::class);
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('doctors', DoctorController::class);
+    Route::resource('messages', MessageController::class);
+    Route::resource('sponsorships', SponsorshipController::class);
+    Route::resource('reviews', ReviewController::class);
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-Route::middleware(['auth', 'verified'])
-    ->name('admin.')
-    ->prefix('admin')
-    ->group(function () {
-        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        Route::resource('/doctors', DoctorController::class);
-    });
-
-
-
-Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
-    Route::get('/', [ReviewController::class, 'index'])->name('review');
-    Route::resource('/reviews', ReviewController::class);
 });
 
 require __DIR__ . '/auth.php';

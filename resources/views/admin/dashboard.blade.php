@@ -3,7 +3,8 @@
 @section('title', 'Dashboard')
 
 @section('content')
-<div class="container">
+@if (Auth::user())
+    <div class="container">
     <h2 class="fs-4 text-secondary my-4">
         {{ __('Dashboard') }}
     </h2>
@@ -27,4 +28,11 @@
         </div>
     </div>
 </div>
+@else
+<div class="container">
+
+    <h2>Non sei loggato, loggati o registrati per accedere al sito.</h2>
+</div>
+@endif
+
 @endsection

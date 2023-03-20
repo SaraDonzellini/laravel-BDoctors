@@ -8,7 +8,12 @@
                     <span>Id: {{ $doctor->id }}</span>
                     <h3 class="card-title fw-bold my-3">{{ $doctor->user->name }} {{ $doctor->user->surname }}</h3>
                     <img :src="$doctor->photo" alt="">
+                    <img :src="$doctor->cv" alt="">
+                    <h4>Address: {{ $doctor->address }}</h4>
+                    <h4>Phone: {{ $doctor->phone }}</h4>
+                    <h6>Prestazioni: {{ $doctor->performances }}</h6>
                     <p>BIO <br> {{ $doctor->bio }}</p>
+                    <p>Visibility: todo toggle</p>
                 </div>
 
                 <div class="secondary-actions mb-2">

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Recensioni')
 @section('content')
 <div class="container">
     <table class="table table-striped table-borderless table-hover mt-5">

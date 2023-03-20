@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Messaggi Ricevuti')
+
 @section('content')
 
 <section class="messages">

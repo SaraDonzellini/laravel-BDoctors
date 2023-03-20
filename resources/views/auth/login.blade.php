@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.guest')
+
+@section('title', 'Accedi al tuo account')
 
 @section('content')
 <div class="container mt-4">

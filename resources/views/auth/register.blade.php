@@ -1,5 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 
+@section('title', 'Sei un dottore? Registrati')
 @section('content')
 <?php
         $specializations = [

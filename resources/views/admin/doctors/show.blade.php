@@ -7,13 +7,13 @@
                 <div class="text my-4">
                     <span>Id: {{ $doctor->id }}</span>
                     <h3 class="card-title fw-bold my-3">{{ $doctor->user->name }} {{ $doctor->user->surname }}</h3>
-                    <img :src="$doctor->photo" alt="">
-                    <img :src="$doctor->cv" alt="">
+                    <img src="{{$doctor->photo}}" alt="Foto"><br>
+                    <img src="{{$doctor->cv}}" alt="CV">
                     <h4>Indirizzo: {{ $doctor->address }}</h4>
                     <h4>Telefono: {{ $doctor->phone }}</h4>
                     <h6>Prestazioni: {{ $doctor->performances }}</h6>
                     <p>Biografia: </p><p> {{ $doctor->bio }}</p>
-                    <p>Visibilià: todo toggle</p>
+                    <p>Visibilità: todo toggle</p>
                 </div>
 
                     <div class="d-flex justify-content-between">

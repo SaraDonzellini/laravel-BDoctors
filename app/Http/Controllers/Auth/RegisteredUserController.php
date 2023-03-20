@@ -46,6 +46,17 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $user->doctor()->with('specialization')->create([
+            'address' => $request->address,
+            'bio' => ' ',
+            'curriculum'=> ' ',
+            'photo'=> ' ',
+            'phone' => ' ',
+            'performances'=> ' ',
+            'visibility' => ' ',
+            // 'specialization'=> $request->specialization,
+        ]);
+
         event(new Registered($user));
 
         Auth::login($user);

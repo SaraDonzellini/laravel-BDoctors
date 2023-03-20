@@ -48,7 +48,7 @@
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link {{ (Route::currentRouteName() == 'register') ? 'fw-bold' : ''  }}" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link {{ (Route::currentRouteName() == 'register') ? 'fw-bold' : ''  }}" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                         </li>
                         @endif
                         @else

@@ -205,7 +205,7 @@
                                         <p><label for="specialization">{{$specialization['title']}}</label>
                                         <input id="specialization" type="checkbox"
                                             class="form-check-input @error('specialization') is-invalid @enderror"
-                                            name="specialization" value="{{ old('specialization') }}"></p>
+                                            name="specialization[]" value="{{ old('specialization') }}"></p>
                                     @endforeach
                                     @error('specialization')
                                         <span class="invalid-feedback" role="alert">

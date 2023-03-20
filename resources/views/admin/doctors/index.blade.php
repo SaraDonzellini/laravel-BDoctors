@@ -17,10 +17,10 @@
                         <th scope="col">Phone</th>
                         <th scope="col">Specialization</th>
                         <th scope="col">Visibility</th>
-                        <th scope="col" class="text-end">
+                        {{-- <th scope="col" class="text-end">
                             <a href="{{ route('admin.doctors.create') }}" class="btn btn-secondary"><i
                                     class="fa-solid fa-plus"></i></a>
-                        </th>
+                        </th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -43,17 +43,17 @@
                                         class="fa-solid fa-eye"></i></a>
 
                                 {{-- Edit --}}
-                                <a href="{{ route('admin.doctors.edit', $doctor->id) }}" class="btn btn-warning"><i
-                                        class="fa-solid fa-edit"></i></a>
+                                {{-- <a href="{{ route('admin.doctors.edit', $doctor->id) }}" class="btn btn-warning"><i
+                                        class="fa-solid fa-edit"></i></a> --}}
 
                                 {{-- Delete --}}
-                                <form class="d-inline-block form-delete"
+                                {{-- <form class="d-inline-block form-delete"
                                     action="{{ route('admin.doctors.destroy', $doctor->id) }}" method="POST"
                                     data-element-name="{{ $doctor->name }}">
                                     @csrf
                                     @method('DELETE')
                                     <button title="Delete" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                                </form>
+                                </form> --}}
                             </td>
                         </tr>
                     @endforeach

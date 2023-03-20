@@ -17,11 +17,11 @@
                         <th scope="col">name</th>
                         <th scope="col">surname</th>
                         <th scope="col">email</th>
-                        <th scope="col">
+                        {{-- <th scope="col">
                             <a href="{{ route('admin.messages.create')}}" class="btn btn-primary px-4">
                                 <i class="fa-solid fa-plus"></i>
                             </a>
-                        </th>
+                        </th> --}}
                     </tr>
                 </thead>
 
@@ -35,7 +35,7 @@
                         <td>{{ $message->surname }}</td>
                         <td>{{ $message->email }}</td>
                         <td>
-                            <a href="{{ route('admin.messages.show', $message->id)}}" class="btn btn-primary">
+                            {{-- <a href="{{ route('admin.messages.show', $message->id)}}" class="btn btn-primary">
                                 <i class="fa-regular fa-eye"></i>
                             </a>
 
@@ -47,7 +47,7 @@
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                             
-                            </form>
+                            </form> --}}
                         </td>
                 
                     </tr>

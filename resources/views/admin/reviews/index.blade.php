@@ -11,9 +11,9 @@
                 <th scope="col">Text</th>
                 <th scope="col">Vote</th>
                 <th scope="col">
-                    <a href="{{ route('admin.reviews.create') }}" class="btn btn-sm btn-primary">
+                    {{-- <a href="{{ route('admin.reviews.create') }}" class="btn btn-sm btn-primary">
                         Create new review
-                    </a>
+                    </a> --}}
                 </th>
             </tr>
         </thead>
@@ -26,18 +26,18 @@
                 <td>{{ $review->text }}</td>
                 <td>{{ $review->vote }}</td>
                 <td>
-                    <a href="{{ route('admin.reviews.edit', $review->id) }}" class="btn btn-sm btn-success">
+                    {{-- <a href="{{ route('admin.reviews.edit', $review->id) }}" class="btn btn-sm btn-success">
                         Edit
-                    </a>
+                    </a> --}}
 
-                    <form action="{{ route('admin.reviews.destroy', $review->id) }}" method="POST" class="d-inline-block">
+                    {{-- <form action="{{ route('admin.reviews.destroy', $review->id) }}" method="POST" class="d-inline-block">
                         @csrf
                         @method('DELETE')
 
                         <button type="submit" class="btn btn-sm btn-danger">
                             Delete
                         </button>
-                    </form>
+                    </form> --}}
                 </td>
             </tr>
             @endforeach

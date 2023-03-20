@@ -9,10 +9,10 @@
         </div>
     @endif
 
-    <div class="mb-3 d-flex justify-content-end ">
+    {{-- <div class="mb-3 d-flex justify-content-end ">
         <a class="btn btn-success me-3" href="{{route('admin.sponsorships.create')}}"><i
             class="fa-solid fa-plus"></i></a>
-    </div>
+    </div> --}}
 
 
     <table class="table w-75 m-auto">
@@ -34,13 +34,13 @@
                 <td>{{ $sponsorship->duration }}</td>
                 <td>{{ $sponsorship->specifics}}</td>
                 <td>
-                 <a class = "btn btn-sm btn-primary " href=" {{ route ( 'admin.sponsorships.show' , $sponsorship->id ) }}" >Show</a>
-                 <a class = "btn btn-sm btn-warning " href=" {{ route ( 'admin.sponsorships.edit' , $sponsorship->id ) }}" >Edit</a>
-                    <form class="d-inline" data-element="{{ $sponsorship->title }}" action="{{ route ( 'admin.sponsorships.destroy' , $sponsorship->id ) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    </form>
+                    <a class = "btn btn-sm btn-primary " href=" {{ route ( 'admin.sponsorships.show' , $sponsorship->id ) }}" >Show</a>
+                    {{-- <a class = "btn btn-sm btn-warning " href=" {{ route ( 'admin.sponsorships.edit' , $sponsorship->id ) }}" >Edit</a>
+                        <form class="d-inline" data-element="{{ $sponsorship->title }}" action="{{ route ( 'admin.sponsorships.destroy' , $sponsorship->id ) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form> --}}
                 </td>
             </tr>
         </tbody>

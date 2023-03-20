@@ -31,7 +31,7 @@
 @else
 <div class="container">
 
-    <h2>Non sei loggato, loggati o registrati per accedere al sito.</h2>
+    <h2 class="mt-5">Non sei loggato, loggati o registrati per accedere al sito.</h2>
 </div>
 @endif
 

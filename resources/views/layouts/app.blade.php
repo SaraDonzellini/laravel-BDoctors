@@ -53,11 +53,17 @@
                         <li class="nav-item">
                             <a class="nav-link {{ (Route::currentRouteName() == 'admin.messages.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.messages.index') }}">{{ __('Messages') }}</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link {{ (Route::currentRouteName() == 'admin.doctors.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.doctors.index') }}">{{ __('Doctors') }}</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link {{ (Route::currentRouteName() == 'admin.reviews.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.reviews.index') }}">{{ __('Reviews') }}</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link {{ (Route::currentRouteName() == 'admin.sponsorships.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.sponsorships.index') }}">{{ __('Sponsorships') }}</a>
                         </li>
                     </ul>
 

@@ -59,7 +59,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.sponsorships.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.sponsorships.index') }}">{{ __('Acquista Sposorizzazioni') }}</a>
+                            <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.sponsorships.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.sponsorships.index') }}">{{ __('Acquista Sponsorizzazioni') }}</a>
                         </li>
                     </ul>
 

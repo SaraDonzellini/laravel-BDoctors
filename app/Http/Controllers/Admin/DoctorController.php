@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Doctor;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class DoctorController extends Controller
@@ -43,7 +44,7 @@ class DoctorController extends Controller
     public function index()
     {
         // $users = User::all();
-        $doctors = Doctor::with('user')->get();
+        $doctors = Doctor::with('user')->where('user_id', Auth::user()->id)->get();
         return view('admin.doctors.index', compact('doctors'));
     }
 

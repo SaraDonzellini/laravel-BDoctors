@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/', [AuthenticatedSessionController::class, 'create'])
+                ->name('login');
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');

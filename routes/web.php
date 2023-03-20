@@ -18,14 +18,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
 Route::get('/', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('doctors', DoctorController::class);
     Route::resource('messages', MessageController::class);
     Route::resource('sponsorships', SponsorshipController::class);

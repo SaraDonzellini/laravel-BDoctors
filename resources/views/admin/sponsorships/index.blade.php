@@ -10,7 +10,8 @@
     @endif
 
     <div class="mb-3 d-flex justify-content-end ">
-        <a class="btn btn-success me-3" href="{{route('admin.sponsorships.create')}}">boh</a>
+        <a class="btn btn-success me-3" href="{{route('admin.sponsorships.create')}}"><i
+            class="fa-solid fa-plus"></i></a>
     </div>
 
 

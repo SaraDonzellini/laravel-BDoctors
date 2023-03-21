@@ -117,7 +117,7 @@
                             </div>
 
                             <!--Specializations-->
-                            <div class="form-group">
+                            <div class="form-group mb-4">
                                 <label class="mb-3" for="specializations">Specializzazioni:</label>
                                 @foreach ($specializations as $specialization)
                                     <div class="form-check">

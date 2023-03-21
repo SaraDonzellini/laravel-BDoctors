@@ -27,18 +27,9 @@
                 <td>{{ $review->text }}</td>
                 <td>{{ $review->vote }}</td>
                 <td>
-                    {{-- <a href="{{ route('admin.reviews.edit', $review->id) }}" class="btn btn-sm btn-success">
-                        Edit
-                    </a> --}}
-
-                    {{-- <form action="{{ route('admin.reviews.destroy', $review->id) }}" method="POST" class="d-inline-block">
-                        @csrf
-                        @method('DELETE')
-
-                        <button type="submit" class="btn btn-sm btn-danger">
-                            Delete
-                        </button>
-                    </form> --}}
+                    <a href="{{ route('admin.reviews.show', $review->id) }}" class="btn btn-sm btn-success">
+                        View
+                    </a> 
                 </td>
             </tr>
             @endforeach

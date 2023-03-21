@@ -15,13 +15,6 @@ class ReviewController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public $validationRules = [
-        'user_id' => 'required',
-        'name' => 'required|string|min:3|max:255',
-        'surname' => 'required|string|min:3|max:255',
-        'text' => 'required|min:10',
-        'vote' => 'required|integer',
-    ];
 
     public function index()
     {
@@ -36,7 +29,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        return view('admin.reviews.create', ['review' => new Review()]);
+       
     }
 
     /**
@@ -47,13 +40,7 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate($this->validationRules);
-
-        $newReview = new Review();
-        $newReview->fill($data);
-        $newReview->save();
-
-        return redirect()->route('admin.reviews.index');
+        
     }
 
     /**
@@ -75,7 +62,7 @@ class ReviewController extends Controller
      */
     public function edit(Review $review)
     {
-        return view('admin.reviews.edit',  compact('review'));
+        
     }
 
     /**
@@ -87,11 +74,7 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-        $data = $request->validate($this->validationRules);
-
-        $review->update($data);
-
-        return redirect()->route('admin.reviews.index', compact('review'));
+    
     }
 
     /**
@@ -102,8 +85,6 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
-        $review->delete();
-
-        return redirect()->route('admin.reviews.index')->with('message', "La recensione  \"$review->name\" è stata eliminata")->with('message_class', 'danger');
+        
     }
 }

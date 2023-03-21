@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Benvenuto Dottore!')
+@section('title')
+    Dottor {{ $doctor->user->name }}!
+@endsection
 
 @section('content')
 

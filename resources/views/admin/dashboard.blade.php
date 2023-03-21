@@ -20,10 +20,10 @@
                     </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('Accesso effettuato!') }}
                 </div>
 
-                <a href="{{route("admin.doctors.index")}}" class="btn btn-success btn-sm" type="button">Entra nel pannello di controllo</a>
+                <a href="{{route("profile.edit")}}" class="btn btn-success btn-sm" type="button">Entra nel pannello di controllo</a>
             </div>
         </div>
     </div>

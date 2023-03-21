@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
+use App\Models\Specialization;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +23,7 @@ class DoctorController extends Controller
         'address.max' => 'L\'indirizzo non può contenere più di :max caratteri',
         'phone.required' => 'Il numero di telefono è obbligatorio',
         'phone.numeric' => 'Il campo telefono deve contenere solo numeri',
+        'specializations.required' => 'Il campo di specializzazioni è obbligatorio'
         // 'phone.max' => 'Il numero di telefono non può contenere più di :max caratteri',
     ];
 
@@ -32,6 +34,7 @@ class DoctorController extends Controller
         'address' => 'required|min:3|max:100',
         'phone' => 'required|numeric',
         'visibility' => 'nullable',
+        'specializations' => ['required', 'array', 'min:1', 'exists:specializations,id']
     ];
 
 
@@ -102,7 +105,8 @@ class DoctorController extends Controller
      */
     public function edit(Doctor $doctor)
     {
-        return view('admin.doctors.edit', ["doctor" => $doctor]);
+        $specializations = Specialization::all();
+        return view('admin.doctors.edit', compact('specializations', 'doctor'));
     }
 
     /**
@@ -113,7 +117,7 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Doctor $doctor)
-    {
+    {   
         $data = $request->validate($this->validationRules, $this->customValidations);
         if (!array_key_exists('visibility', $data)){
             $data['visibility'] = false;

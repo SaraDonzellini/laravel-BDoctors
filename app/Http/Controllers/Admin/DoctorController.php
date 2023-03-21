@@ -38,7 +38,7 @@ class DoctorController extends Controller
     ];
 
 
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -73,10 +73,10 @@ class DoctorController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate($this->validationRules, $this->customValidations);
-        if (!array_key_exists('visibility', $data)){
+        if (!array_key_exists('visibility', $data)) {
             $data['visibility'] = false;
         };
-        
+
         $data['photo'] = Storage::put('imgs/', $data['photo']);
         $data['curriculum'] = Storage::put('curriculum/', $data['curriculum']);
 
@@ -89,7 +89,7 @@ class DoctorController extends Controller
         // dd($newDoctor);
         $newDoctor->specializations()->sync($data['specializations'] ?? []);
         $newDoctor->save();
-        
+
         return redirect()->route('admin.doctors.index')->with('message', "Il profilo è stato creato con successo")->with('alert-type', 'success');
     }
 
@@ -101,6 +101,7 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
+        //dump($doctor);
         $doctors = Doctor::with('user')->get();
         return view('admin.doctors.show', compact('doctor'));
     }
@@ -113,6 +114,9 @@ class DoctorController extends Controller
      */
     public function edit(Doctor $doctor)
     {
+        $user = Auth::user();
+        $doctor = $user->doctor;
+
         $specializations = Specialization::all();
         return view('admin.doctors.edit', compact('specializations', 'doctor'));
     }
@@ -125,25 +129,27 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Doctor $doctor)
-    {   
+    {
+        //dd($request->all());
         $data = $request->validate($this->validationRules, $this->customValidations);
-        if (!array_key_exists('visibility', $data)){
+        //dd($data);
+        if (!array_key_exists('visibility', $data)) {
             $data['visibility'] = false;
         };
-        
+
         $data['photo'] = Storage::put('imgs/', $data['photo']);
-        if (!str_starts_with($doctor->photo, 'http')){
+        if (!str_starts_with($doctor->photo, 'http')) {
             Storage::delete($doctor->photo);
         }
         $data['curriculum'] = Storage::put('curriculum/', $data['curriculum']);
-        if (!str_starts_with($doctor->curriculum, 'http')){
+        if (!str_starts_with($doctor->curriculum, 'http')) {
             Storage::delete($doctor->curriculum);
         }
 
         $doctor->specializations()->sync($data['specializations'] ?? []);
         $doctor->update($data);
-        
-        return redirect()->route('admin.doctors.index')->with('message', "Il profilo è stato aggiornato con successo")->with('alert-type', 'info');
+
+        return redirect()->route('admin.doctors.show', $doctor->id)->with('message', "Il profilo è stato aggiornato con successo")->with('alert-type', 'info');
     }
 
     /**
@@ -157,10 +163,10 @@ class DoctorController extends Controller
 
         $doctor->delete();
 
-        if (!str_starts_with($doctor->photo, 'http')){
+        if (!str_starts_with($doctor->photo, 'http')) {
             Storage::delete($doctor->photo);
         }
-        if (!str_starts_with($doctor->curriculum, 'http')){
+        if (!str_starts_with($doctor->curriculum, 'http')) {
             Storage::delete($doctor->curriculum);
         }
 

@@ -51,7 +51,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.doctors.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.doctors.index') }}">{{ __('Profilo') }}</a>
+                            <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.doctors.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.doctors.index') }}">{{ __('Profilo Dottore') }}</a>
                         </li>
 
                         <li class="nav-item">
@@ -87,10 +87,10 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('admin.dashboard') }}">{{__('Dashboard')}}</a>
-                                <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
+                                <a class="dropdown-item" href="{{ url('profile') }}">{{__('Account')}}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('Esci') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

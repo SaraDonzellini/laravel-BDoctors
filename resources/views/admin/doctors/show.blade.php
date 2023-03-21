@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container py-3">
         @if (session('message'))
                 <div class="alert alert-{{ session('alert-type') }}">
                     {{ session('message') }}
@@ -59,6 +59,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection

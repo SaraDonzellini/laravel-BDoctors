@@ -8,6 +8,7 @@
 @csrf
 @method($method)
 
+
 <div class="mb-3">
 <label for="address" class="form-label">Address</label>
 <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address', $doctor->address )}}">
@@ -68,7 +69,13 @@
     <label class="mb-3" for="specializations">Specializzazioni:</label>
     @foreach ($specializations as $specialization)
         <div class="form-check">
-            <input type="checkbox" class="form-check-input @error('specializations') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" value="{{ $specialization->id }}">
+            <input type="checkbox" class="form-check-input @error('specialization') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" value="{{ $specialization->id }}"
+            @if ($errors->any())
+                @checked(in_array($specialization->id, old('specialization',[])))
+            @else
+                @checked($doctor->specializations->contains($specialization->id))
+            @endif
+            />
             <label class="form-check-label" for="specialization{{ $specialization->id }}">{{ $specialization->title }}</label>
         </div>
     @endforeach

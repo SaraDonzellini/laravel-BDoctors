@@ -114,6 +114,9 @@ class DoctorController extends Controller
      */
     public function edit(Doctor $doctor)
     {
+        $user = Auth::user();
+        $doctor = $user->doctor;
+
         $specializations = Specialization::all();
         return view('admin.doctors.edit', compact('specializations', 'doctor'));
     }
@@ -127,7 +130,9 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     {
+        //dd($request->all());
         $data = $request->validate($this->validationRules, $this->customValidations);
+        //dd($data);
         if (!array_key_exists('visibility', $data)) {
             $data['visibility'] = false;
         };
@@ -144,7 +149,7 @@ class DoctorController extends Controller
         $doctor->specializations()->sync($data['specializations'] ?? []);
         $doctor->update($data);
 
-        return redirect()->route('profile.edit')->with('message', "Il profilo è stato aggiornato con successo")->with('alert-type', 'info');
+        return redirect()->route('admin.doctors.show', $doctor->id)->with('message', "Il profilo è stato aggiornato con successo")->with('alert-type', 'info');
     }
 
     /**

@@ -1,109 +1,24 @@
-@extends('layouts.app')
+@extends('layouts.guest')
+
+@section('title', 'Sei un dottore? Registrati')
 
 @section('content')
-<?php
-        $specializations = [
-            [
-                'title' => 'Medico di base',
-                'color' => '#D6F8D6'
-            ],
-            [
-                'title' => 'Ginecologo',
-                'color' => '#7FC6A4'
-            ],
-            [
-                'title' => 'Ortopedico',
-                'color' => '#A6C48A'
-            ],
-            [
-                'title' => 'Dermatologo',
-                'color' => '#F6E7CB'
-            ],
-            [
-                'title' => 'Psicologo',
-                'color' => '#DD9787'
-            ],
-            [
-                'title' => 'Oculista',
-                'color' => '#74D3AE'
-            ],
-            [
-                'title' => 'Urologo',
-                'color' => '#EDE6E3'
-            ],
-            [
-                'title' => 'Otorino',
-                'color' => '#DADAD9'
-            ],
-            [
-                'title' => 'Dentista',
-                'color' => '#5BC3EB'
-            ],
-            [
-                'title' => 'Endocrinologo',
-                'color' => '#EEE0CB'
-            ],
-            [
-                'title' => 'Neurologo',
-                'color' => '#BAA898'
-            ],
-            [
-                'title' => 'Fisioterapista',
-                'color' => '#BFD7EA'
-            ],
-            [
-                'title' => 'Pediatra',
-                'color' => '#FAF8D4'
-            ],
-            [
-                'title' => 'Psicoterapeuta',
-                'color' => '#EBDCCB'
-            ],
-            [
-                'title' => 'Andrologo',
-                'color' => '#C3BAAA'
-            ],
-            [
-                'title' => 'Proctologo',
-                'color' => '#B2A3B5'
-            ],
-            [
-                'title' => 'Logopedista',
-                'color' => '#B098A4'
-            ],
-            [
-                'title' => 'Medico competente',
-                'color' => '#DBD9DB'
-            ],
-            [
-                'title' => 'Sessuologo',
-                'color' => '#E5EBEA'
-            ],
-            [
-                'title' => 'Chirurgo pediatrico',
-                'color' => '#F0A202'
-            ],
-            [
-                'title' => 'Medico genetista',
-                'color' => '#DB995A'
-            ],
-        ];
-?>
+
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
+                    <div class="card-header">{{ __('Registrazione Utente') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
 
-
+                            <!--Email-->
                             <div class="mb-4 row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo Email') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -118,6 +33,7 @@
                                 </div>
                             </div>
 
+                            <!--Password-->
                             <div class="mb-4 row">
                                 <label for="password"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -135,9 +51,10 @@
                                 </div>
                             </div>
 
+                            <!--Confirm Password-->
                             <div class="mb-4 row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
@@ -145,9 +62,10 @@
                                 </div>
                             </div>
 
+                            <!--Name-->
                             <div class="mb-4 row">
                                 <label for="name"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text"
@@ -162,9 +80,10 @@
                                 </div>
                             </div>
 
+                            <!--Surname-->
                             <div class="mb-4 row">
                                 <label for="surname"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Cognome') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="surname" type="text"
@@ -179,9 +98,10 @@
                                 </div>
                             </div>
 
+                            <!--Address-->
                             <div class="mb-4 row">
                                 <label for="address"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="address" type="text"
@@ -196,30 +116,23 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row">
-                                <label for="specialization"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Specializations') }}</label>
+                            <!--Specializations-->
+                            <div class="form-group mb-4">
+                                <label class="mb-3" for="specializations">Specializzazioni:</label>
+                                @foreach ($specializations as $specialization)
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input @error('specializations') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" value="{{ $specialization->id }}">
+                                        <label class="form-check-label" for="specialization{{ $specialization->id }}">{{ $specialization->title }}</label>
+                                    </div>
+                                @endforeach
 
-                                <div class="col-md-6">
-                                    @foreach ($specializations as $specialization)
-                                        <p><label for="specialization">{{$specialization['title']}}</label>
-                                        <input id="specialization" type="checkbox"
-                                            class="form-check-input @error('specialization') is-invalid @enderror"
-                                            name="specialization[]" value="{{ old('specialization') }}"></p>
-                                    @endforeach
-                                    @error('specialization')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
                             </div>
 
-
+                            <!--button Register-->
                             <div class="mb-4 row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                                        {{ __('Registrati') }}
                                     </button>
                                 </div>
                             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
+use App\Models\Specialization;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +23,7 @@ class DoctorController extends Controller
         'address.max' => 'L\'indirizzo non può contenere più di :max caratteri',
         'phone.required' => 'Il numero di telefono è obbligatorio',
         'phone.numeric' => 'Il campo telefono deve contenere solo numeri',
+        'specializations.required' => 'Il campo di specializzazioni è obbligatorio'
         // 'phone.max' => 'Il numero di telefono non può contenere più di :max caratteri',
     ];
 
@@ -32,6 +34,7 @@ class DoctorController extends Controller
         'address' => 'required|min:3|max:100',
         'phone' => 'required|numeric',
         'visibility' => 'nullable',
+        'specializations' => ['required', 'array', 'min:1', 'exists:specializations,id']
     ];
 
 
@@ -43,9 +46,9 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        // $users = User::all();
-        $doctors = Doctor::with('user')->where('user_id', Auth::user()->id)->get();
-        return view('admin.doctors.index', compact('doctors'));
+        $user = Auth::user();
+        $doctor = $user->doctor;
+        return view('admin.doctors.show', compact('user', 'doctor'));
     }
 
     /**
@@ -53,9 +56,12 @@ class DoctorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Doctor $doctor)
     {
-        return view('admin.doctors.create', ["doctor" => new Doctor()]);
+        $user = Auth::user();
+        $doctor = $user->doctor;
+        $specializations = Specialization::all();
+        return view('admin.doctors.create', compact('specializations', 'doctor'));
     }
 
     /**
@@ -74,8 +80,13 @@ class DoctorController extends Controller
         $data['photo'] = Storage::put('imgs/', $data['photo']);
         $data['curriculum'] = Storage::put('curriculum/', $data['curriculum']);
 
-        $newDoctor = new Doctor();
+        $currentUser = Auth::user();
+        // dd($currentUser);
+
+        $newDoctor = $currentUser->doctor;
+        // dd($newDoctor);
         $newDoctor->fill($data);
+        // dd($newDoctor);
         $newDoctor->specializations()->sync($data['specializations'] ?? []);
         $newDoctor->save();
 
@@ -103,7 +114,8 @@ class DoctorController extends Controller
      */
     public function edit(Doctor $doctor)
     {
-        return view('profile.update-doctor-information-form', ["doctor" => $doctor]);
+        $specializations = Specialization::all();
+        return view('admin.doctors.edit', compact('specializations', 'doctor'));
     }
 
     /**
@@ -115,7 +127,6 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     {
-        //dd($request->all());
         $data = $request->validate($this->validationRules, $this->customValidations);
         if (!array_key_exists('visibility', $data)) {
             $data['visibility'] = false;
@@ -125,11 +136,10 @@ class DoctorController extends Controller
         if (!str_starts_with($doctor->photo, 'http')) {
             Storage::delete($doctor->photo);
         }
-
         $data['curriculum'] = Storage::put('curriculum/', $data['curriculum']);
-        /* if (!str_starts_with($doctor->curriculum, 'http')) {
+        if (!str_starts_with($doctor->curriculum, 'http')) {
             Storage::delete($doctor->curriculum);
-        } */
+        }
 
         $doctor->specializations()->sync($data['specializations'] ?? []);
         $doctor->update($data);
@@ -151,7 +161,6 @@ class DoctorController extends Controller
         if (!str_starts_with($doctor->photo, 'http')) {
             Storage::delete($doctor->photo);
         }
-
         if (!str_starts_with($doctor->curriculum, 'http')) {
             Storage::delete($doctor->curriculum);
         }

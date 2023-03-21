@@ -14,11 +14,11 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Surname</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">Specialization</th>
-                        <th scope="col">Visibility</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Cognome</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Specializzazioni</th>
+                        <th scope="col">Visibilità</th>
                         {{-- <th scope="col" class="text-end">
                             <a href="{{ route('admin.doctors.create') }}" class="btn btn-secondary"><i
                                     class="fa-solid fa-plus"></i></a>

@@ -25,7 +25,7 @@ return new class extends Migration
             $table->boolean('visibility');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -36,6 +36,7 @@ return new class extends Migration
      */
     public function down()
     {
+        
         Schema::dropIfExists('doctors');
     }
 };

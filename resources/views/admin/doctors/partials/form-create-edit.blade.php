@@ -8,11 +8,6 @@
 @csrf
 @method($method)
 
-{{-- 
-<div class="mb-3">
-    <h3>Utente: {{ $doctor->user->name }} {{ $doctor->user->surname }} </h3>
-</div> --}}
-
 <div class="mb-3">
 <label for="address" class="form-label">Address</label>
 <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address', $doctor->address )}}">
@@ -54,9 +49,9 @@
 </div>
 
 <div class="mb-3">
-    <label for="cv" class="form-label">Curriculum file</label>
-    <input type="file" name="cv" id="cv" class="form-control @error('cv') is-invalid @enderror" value="{{'cv', $doctor->cv}}">
-@error ('cv')
+    <label for="curriculum" class="form-label">Curriculum file</label>
+    <input type="file" name="curriculum" id="curriculum" class="form-control @error('curriculum') is-invalid @enderror" value="{{'curriculum', $doctor->curriculum}}">
+@error ('curriculum')
 <div class="invalid-feedback">
     {{$message}}
 </div>
@@ -66,6 +61,18 @@
 <div class="mb-3">
 <label for="visibility" class="form-label me-3">Visibile</label>
 <input type="checkbox" class="form-check-input @error('visibility') is-invalid @enderror" id="visibility" name="visibility" value="1" {{ old('visibility', $doctor->visibility) ? 'checked' : ''}}>
+</div>
+
+<!--Specializations-->
+<div class="form-group">
+    <label class="mb-3" for="specializations">Specializzazioni:</label>
+    @foreach ($specializations as $specialization)
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input @error('specializations') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" value="{{ $specialization->id }}">
+            <label class="form-check-label" for="specialization{{ $specialization->id }}">{{ $specialization->title }}</label>
+        </div>
+    @endforeach
+
 </div>
 
 <div class="buttons">

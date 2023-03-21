@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
+@section('title')
+    Dottor {{ $doctor->user->name }}!
+@endsection
+
 @section('content')
+
     <div class="container">
         @if (session('message'))
                 <div class="alert alert-{{ session('alert-type') }}">

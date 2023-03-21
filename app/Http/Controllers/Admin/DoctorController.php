@@ -166,4 +166,13 @@ class DoctorController extends Controller
 
         return redirect()->route('admin.doctors.index')->with('message', "Il profilo è stato cancellato")->with('alert-type', 'danger');
     }
+
+    public function enableToggle(Doctor $doctor)
+    {
+        $doctor->visibility = !$doctor->visibility;
+        $doctor->save();
+
+        $message = ($doctor->visibility) ? "visibility" : "not-visibility";
+        return redirect()->back()->with('alert-type', 'success');
+    }
 }

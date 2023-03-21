@@ -37,19 +37,9 @@
                         <td>{{ $message->surname }}</td>
                         <td>{{ $message->email }}</td>
                         <td>
-                            {{-- <a href="{{ route('admin.messages.show', $message->id)}}" class="btn btn-primary">
+                            <a href="{{ route('admin.messages.show', $message->id)}}" class="btn btn-primary">
                                 <i class="fa-regular fa-eye"></i>
                             </a>
-
-                            <form class="d-inline delete" action="{{ route('admin.messages.destroy', $message->id)}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                
-                                <button class="btn btn-danger">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            
-                            </form> --}}
                         </td>
                 
                     </tr>

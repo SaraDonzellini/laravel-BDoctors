@@ -27,7 +27,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        return view('admin.messages.create');
+        
     }
 
     /**
@@ -60,7 +60,6 @@ class MessageController extends Controller
      */
     public function destroy(Message $message)
     {
-        $message->delete();
-        return redirect()->route('admin.messages.index');
+
     }
 }

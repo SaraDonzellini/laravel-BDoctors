@@ -23,7 +23,13 @@
                     <h4>Telefono: {{ $doctor->phone }}</h4>
                     <h6>Prestazioni: {{ $doctor->performances }}</h6>
                     <p>Biografia: </p><p> {{ $doctor->bio }}</p>
-                    <p>Visibilità: todo toggle</p>
+                    <form action="{{ route('admin.doctors.toggle', $doctor->id) }}" method="POST">
+                        @method('PATCH')
+                        @csrf
+                        <button type="submit" title="{{ $doctor->visibility ? 'visibility' : 'not-visibility' }}"
+                            class="btn btn-outline"><i
+                                class="fa-2x fa-solid fas fa-fw {{ $doctor->visibility ? 'fa-toggle-on' : 'fa-toggle-off' }}"></i></button>
+                    </form>
                 </div>
 
                     <div class="d-flex justify-content-between">

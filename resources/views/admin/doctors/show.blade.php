@@ -2,13 +2,18 @@
 
 @section('content')
     <div class="container">
+        @if (session('message'))
+                <div class="alert alert-{{ session('alert-type') }}">
+                    {{ session('message') }}
+                </div>
+            @endif
         <div class="card mb-3 mt-5 shadow-lg">
             <div class="card text-center">
                 <div class="text my-4">
                     <span>Id: {{ $doctor->id }}</span>
                     <h3 class="card-title fw-bold my-3">{{ $doctor->user->name }} {{ $doctor->user->surname }}</h3>
-                    <img src="{{$doctor->photo}}" alt="Foto"><br>
-                    <img src="{{$doctor->cv}}" alt="CV">
+                    <img src="{{asset("storage/$doctor->photo")}}" alt="Foto"><br>
+                    <img src="{{asset("storage/$doctor->curriculum")}}" alt="CV">
                     <h4>Indirizzo: {{ $doctor->address }}</h4>
                     <h4>Telefono: {{ $doctor->phone }}</h4>
                     <h6>Prestazioni: {{ $doctor->performances }}</h6>

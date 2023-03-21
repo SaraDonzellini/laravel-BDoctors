@@ -54,9 +54,9 @@
 </div>
 
 <div class="mb-3">
-    <label for="cv" class="form-label">Curriculum file</label>
-    <input type="file" name="cv" id="cv" class="form-control @error('cv') is-invalid @enderror" value="{{'cv', $doctor->cv}}">
-@error ('cv')
+    <label for="curriculum" class="form-label">Curriculum file</label>
+    <input type="file" name="curriculum" id="curriculum" class="form-control @error('curriculum') is-invalid @enderror" value="{{'curriculum', $doctor->curriculum}}">
+@error ('curriculum')
 <div class="invalid-feedback">
     {{$message}}
 </div>

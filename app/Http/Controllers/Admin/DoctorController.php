@@ -15,8 +15,8 @@ class DoctorController extends Controller
     public $customValidations = [
         'bio.required' => 'La biografia è obbligatoria',
         'bio.min' => 'Il campo Bio deve contenere almeno :min caratteri',
-        'cv.required' => 'Il Curriculum è necessario',
-        'cv.image' => 'Il formato del curriculum è errato',
+        'curriculum.required' => 'Il Curriculum è necessario',
+        'curriculum.image' => 'Il formato del curriculum è errato',
         'photo.image' => 'Il formato della foto è errato',
         'address.required' => 'L\'indirizzo è obbligatorio',
         'address.min' => 'L\'indirizzo deve contenere almeno :min caratteri',
@@ -29,7 +29,7 @@ class DoctorController extends Controller
 
     public $validationRules = [
         'bio' => 'required|min:10',
-        'cv' => 'required|image',
+        'curriculum' => 'required|image',
         'photo' => 'nullable|image',
         'address' => 'required|min:3|max:100',
         'phone' => 'required|numeric',
@@ -76,7 +76,7 @@ class DoctorController extends Controller
         };
         
         $data['photo'] = Storage::put('imgs/', $data['photo']);
-        $data['cv'] = Storage::put('cv/', $data['cv']);
+        $data['curriculum'] = Storage::put('curriculum/', $data['curriculum']);
 
         $newDoctor = new Doctor();
         $newDoctor->fill($data);
@@ -128,6 +128,10 @@ class DoctorController extends Controller
         if (!str_starts_with($doctor->photo, 'http')){
             Storage::delete($doctor->photo);
         }
+        $data['curriculum'] = Storage::put('curriculum/', $data['curriculum']);
+        if (!str_starts_with($doctor->curriculum, 'http')){
+            Storage::delete($doctor->curriculum);
+        }
 
         $doctor->specializations()->sync($data['specializations'] ?? []);
         $doctor->update($data);
@@ -148,6 +152,9 @@ class DoctorController extends Controller
 
         if (!str_starts_with($doctor->photo, 'http')){
             Storage::delete($doctor->photo);
+        }
+        if (!str_starts_with($doctor->curriculum, 'http')){
+            Storage::delete($doctor->curriculum);
         }
 
         return redirect()->route('admin.doctors.index')->with('message', "Il profilo è stato cancellato")->with('alert-type', 'danger');

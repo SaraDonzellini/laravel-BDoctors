@@ -8,11 +8,6 @@
 @csrf
 @method($method)
 
-{{-- 
-<div class="mb-3">
-    <h3>Utente: {{ $doctor->user->name }} {{ $doctor->user->surname }} </h3>
-</div> --}}
-
 <div class="mb-3">
 <label for="address" class="form-label">Address</label>
 <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address', $doctor->address )}}">

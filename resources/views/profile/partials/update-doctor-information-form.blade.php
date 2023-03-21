@@ -9,7 +9,8 @@
         use Illuminate\Support\Facades\Auth;
         use App\Models\Doctor;
 
-        $doctor = Doctor::findOrFail(Auth::user()->id);
+        $user = Auth::user();
+        $doctor = $user->doctor;
     ?>
 
     <form action="{{ route('admin.doctors.update', $doctor->id) }}" method="POST" enctype="multipart/form-data">

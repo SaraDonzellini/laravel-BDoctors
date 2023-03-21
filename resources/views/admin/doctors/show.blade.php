@@ -7,8 +7,8 @@
                 <div class="text my-4">
                     <span>Id: {{ $doctor->id }}</span>
                     <h3 class="card-title fw-bold my-3">{{ $doctor->user->name }} {{ $doctor->user->surname }}</h3>
-                    <img :src="$doctor->photo" alt="">
-                    <img :src="$doctor->cv" alt="">
+                    <img src="{{asset("storage/$doctor->photo")}}" alt="Foto dottore"><br>
+                    <img src="{{ asset("storage/$doctor->curriculum") }}" alt="Curriculum dottore">
                     <h4>Address: {{ $doctor->address }}</h4>
                     <h4>Phone: {{ $doctor->phone }}</h4>
                     <h6>Prestazioni: {{ $doctor->performances }}</h6>
@@ -30,6 +30,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection

@@ -58,6 +58,8 @@ class DoctorController extends Controller
      */
     public function create(Doctor $doctor)
     {
+        $user = Auth::user();
+        $doctor = $user->doctor;
         $specializations = Specialization::all();
         return view('admin.doctors.create', compact('specializations', 'doctor'));
     }
@@ -78,8 +80,13 @@ class DoctorController extends Controller
         $data['photo'] = Storage::put('imgs/', $data['photo']);
         $data['curriculum'] = Storage::put('curriculum/', $data['curriculum']);
 
-        $newDoctor = new Doctor();
+        $currentUser = Auth::user();
+        // dd($currentUser);
+
+        $newDoctor = $currentUser->doctor;
+        // dd($newDoctor);
         $newDoctor->fill($data);
+        // dd($newDoctor);
         $newDoctor->specializations()->sync($data['specializations'] ?? []);
         $newDoctor->save();
         

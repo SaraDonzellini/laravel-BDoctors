@@ -68,6 +68,18 @@
 <input type="checkbox" class="form-check-input @error('visibility') is-invalid @enderror" id="visibility" name="visibility" value="1" {{ old('visibility', $doctor->visibility) ? 'checked' : ''}}>
 </div>
 
+<!--Specializations-->
+<div class="form-group">
+    <label class="mb-3" for="specializations">Specializzazioni:</label>
+    @foreach ($specializations as $specialization)
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input @error('specializations') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" value="{{ $specialization->id }}">
+            <label class="form-check-label" for="specialization{{ $specialization->id }}">{{ $specialization->title }}</label>
+        </div>
+    @endforeach
+
+</div>
+
 <div class="buttons">
 <a href="{{route('admin.doctors.index')}}" class="btn btn-dark me-2"><i class="fa-solid fa-arrow-left"></i> Cancel</a>
 <button type="submit" class="btn btn-primary">Submit</button>

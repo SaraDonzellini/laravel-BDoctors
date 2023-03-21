@@ -56,9 +56,10 @@ class DoctorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Doctor $doctor)
     {
-        return view('admin.doctors.create', ["doctor" => new Doctor()]);
+        $specializations = Specialization::all();
+        return view('admin.doctors.create', compact('specializations', 'doctor'));
     }
 
     /**

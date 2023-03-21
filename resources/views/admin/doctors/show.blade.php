@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Benvenuto Dottore!')
+
 @section('content')
+
     <div class="container">
         @if (session('message'))
                 <div class="alert alert-{{ session('alert-type') }}">

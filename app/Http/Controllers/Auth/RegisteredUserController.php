@@ -36,7 +36,7 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'address' => ['required', 'string'],
             'specializations' => ['required', 'array', 'min:1', 'exists:specializations,id']
@@ -56,10 +56,10 @@ class RegisteredUserController extends Controller
         $doctor = new Doctor([
             'address' => $request->address,
             'bio' => 'da definire',
-            'curriculum'=> 'da definire',
-            'photo'=> 'da definire',
+            'curriculum' => 'da definire',
+            'photo' => 'da definire',
             'phone' => 'da definire',
-            'performances'=> 'da definire',
+            'performance' => 'da definire',
             'visibility' => true,
         ]);
 

@@ -1,4 +1,4 @@
-<section>
+<section id="doctor-messages">
     <div class="d-flex justify-content-center p-4">
 
         {{-- Route to Doctor's messages --}}
@@ -6,14 +6,17 @@
             Messaggi
         </a>
         
-        {{-- @foreach ($messages as $message)
-        <p>{{ $message->id }}</p>
-        <p>{{ $message->user_id }}</p>
+    </div>
+
+    {{-- Last messages --}}
+    <div>
+        @foreach ($doctor->user->messages as $message)
         <p>{{ $message->name }}</p>
         <p>{{ $message->surname }}</p>
         <p>{{ $message->email }}</p>
-        @endforeach --}}
+        <p>{{ $message->text }}</p>
+        @endforeach
 
+    </div>
 
-     </div>
 </section>

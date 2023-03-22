@@ -20,21 +20,21 @@
     <div class="row position-relative">  
 
         {{-- Doctor's infos --}}
-        <div class="card col-4 p-4 mb-4 bg-white shadow rounded-lg my-card">
+        <div class="card col-12 col-md-6 col-lg-4 p-4 mb-4 bg-white shadow rounded-lg my-card">
             
             @include('admin.dashboard-partials.dash-doctor-info')
             
         </div>  
         
         {{-- Doctor's messages --}}
-        <div class="card col-8 p-4 mb-4 bg-white shadow rounded-lg my-card">
+        <div class="card col-12 col-md-6 col-lg-8 p-4 mb-4 bg-white shadow rounded-lg my-card">
             
             @include('admin.dashboard-partials.dash-messages')
             
         </div>
     </div>
 
-    <div class="row row-cols-3">
+    <div class="row row-cols-1 row-cols-md-3">
         
         {{-- Doctor's curriculum --}}
         <div class="card p-4 mb-4 bg-white shadow rounded-lg my-card">

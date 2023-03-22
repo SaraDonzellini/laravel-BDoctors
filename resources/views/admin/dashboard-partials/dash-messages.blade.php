@@ -1,3 +1,12 @@
+<?php
+namespace App\Models;
+use Illuminate\Support\Facades\Auth;
+
+$messages = Message::with('user')->where('user_id', Auth::user()->id)->latest()->take(3)->get();
+
+?>
+
+
 <section id="doctor-messages">
     <div class="d-flex justify-content-center p-4">
 
@@ -10,7 +19,7 @@
 
     {{-- Last messages --}}
     <div>
-        @foreach ($doctor->user->messages as $message)
+        @foreach ($messages as $message)
         <p>{{ $message->name }}</p>
         <p>{{ $message->surname }}</p>
         <p>{{ $message->email }}</p>

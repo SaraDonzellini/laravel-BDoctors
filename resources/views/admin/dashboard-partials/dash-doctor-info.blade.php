@@ -1,8 +1,10 @@
 <section id="doctor-profile">
     <div class="d-flex justify-content-center">
-       {{--  <h3>
+
+        {{-- Route to Doctor's show --}}
+        <a href="{{ route('admin.doctors.show', $doctor->id) }}" class="btn-dash">
             Profilo Dottore
-        </h3> --}}
+        </a>
     </div>
 
     {{-- Doctor's photo --}}

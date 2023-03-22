@@ -19,3 +19,8 @@ header {
         color: $primary-text-color !important;
     }
 }
+.bg-spons,
+.bg-message,
+.bg-review{
+    background-color: $secondary-bg-color;
+}

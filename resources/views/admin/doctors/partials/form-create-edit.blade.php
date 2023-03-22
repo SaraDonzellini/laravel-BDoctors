@@ -94,8 +94,8 @@
     </div>
 
     <!--Specializations-->
-    <div class="form-group">
-        <label class="mb-3" for="specializations">Specializzazioni:</label>
+    <label class="mb-3" for="specializations">Specializzazioni:</label>
+    <div class="form-group d-flex flex-wrap justify-content-evenly gap-3">
         @foreach ($specializations as $specialization)
             <div class="form-check">
                 <input type="checkbox" class="form-check-input @error('specialization') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" value="{{ $specialization->id }}"

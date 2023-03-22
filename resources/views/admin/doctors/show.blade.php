@@ -21,7 +21,7 @@
                     <img src="{{asset("storage/$doctor->curriculum")}}" alt="CV">
                     <h4>Indirizzo: {{ $doctor->address }}</h4>
                     <h4>Telefono: {{ $doctor->phone }}</h4>
-                    <h6>Prestazione: {{$doctor->performances}}</h6>
+                    <h6>Prestazione: {{$doctor->performance}}</h6>
 
                     <p>Biografia: </p><p> {{ $doctor->bio }}</p>
                     <form action="{{ route('admin.doctors.toggle', $doctor->id) }}" method="POST">

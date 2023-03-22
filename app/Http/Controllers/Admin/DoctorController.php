@@ -64,7 +64,7 @@ class DoctorController extends Controller
         $doctor = $user->doctor;
         $specializations = Specialization::all();
         $performances = ['Visita specialistica', 'Consulenza', 'Diagnosi', 'Certificazione'];
-        return view('admin.doctors.create', compact('specializations', 'doctor', 'performance'));
+        return view('admin.doctors.create', compact('specializations', 'doctor', 'performances'));
     }
 
     /**

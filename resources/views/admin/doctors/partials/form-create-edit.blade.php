@@ -34,6 +34,19 @@
         @enderror
     </div>
 
+    <!--Performances-->
+    <div class="form-group d-flex ">
+        <label class="mb-3 me-4" for="performances">Prestazioni:</label>
+        @foreach ($performances as $performance)
+            <div class="form-check me-4">
+                <input type="radio" class="form-check-input me-2 @error('performance') is-invalid @enderror" name="performances" value="{{ $performance }}"
+                />
+                <label class="form-check-label mb-2" for="performance">{{ $performance }}</label>
+            </div>
+        @endforeach
+
+    </div>
+
     <!--N° Telephone-->
     <div class="mb-3">
 
@@ -97,6 +110,7 @@
         @endforeach
 
     </div>
+
 
     <!--Buttons-->
     <div class="buttons my-3">

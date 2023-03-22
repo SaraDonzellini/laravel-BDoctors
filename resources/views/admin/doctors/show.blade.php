@@ -21,12 +21,13 @@
                     <img src="{{asset("storage/$doctor->curriculum")}}" alt="CV">
                     <h4>Indirizzo: {{ $doctor->address }}</h4>
                     <h4>Telefono: {{ $doctor->phone }}</h4>
-                    <h6>Prestazioni: {{ $doctor->performances }}</h6>
+                    <h6>Prestazione: {{$doctor->performances}}</h6>
+
                     <p>Biografia: </p><p> {{ $doctor->bio }}</p>
                     <form action="{{ route('admin.doctors.toggle', $doctor->id) }}" method="POST">
                         @method('PATCH')
                         @csrf
-                        <button type="submit" title="{{ $doctor->visibility ? 'visibility' : 'not-visibility' }}"
+                        <button type="submit" title="{{ $doctor->visibility ? 'visibile' : 'non visibile' }}"
                             class="btn btn-outline"><i
                                 class="fa-2x fa-solid fas fa-fw {{ $doctor->visibility ? 'fa-toggle-on' : 'fa-toggle-off' }}"></i></button>
                     </form>

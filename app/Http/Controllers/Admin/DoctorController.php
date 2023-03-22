@@ -23,7 +23,8 @@ class DoctorController extends Controller
         'address.max' => 'L\'indirizzo non può contenere più di :max caratteri',
         'phone.required' => 'Il numero di telefono è obbligatorio',
         'phone.numeric' => 'Il campo telefono deve contenere solo numeri',
-        'specializations.required' => 'Il campo di specializzazioni è obbligatorio'
+        'specializations.required' => 'Il campo di specializzazioni è obbligatorio',
+        'performances.required' => 'Il campo performance è richiesto'
         // 'phone.max' => 'Il numero di telefono non può contenere più di :max caratteri',
     ];
 
@@ -34,7 +35,8 @@ class DoctorController extends Controller
         'address' => 'required|min:3|max:100',
         'phone' => 'required|numeric',
         'visibility' => 'nullable',
-        'specializations' => ['required', 'array', 'min:1', 'exists:specializations,id']
+        'specializations' => ['required', 'array', 'min:1', 'exists:specializations,id'],
+        'performances' => ['required', 'min:1']
     ];
 
 
@@ -61,7 +63,8 @@ class DoctorController extends Controller
         $user = Auth::user();
         $doctor = $user->doctor;
         $specializations = Specialization::all();
-        return view('admin.doctors.create', compact('specializations', 'doctor'));
+        $performances = ['Visita specialistica', 'Consulenza', 'Diagnosi', 'Certificazione'];
+        return view('admin.doctors.create', compact('specializations', 'doctor', 'performances'));
     }
 
     /**
@@ -84,9 +87,9 @@ class DoctorController extends Controller
         // dd($currentUser);
 
         $newDoctor = $currentUser->doctor;
-        // dd($newDoctor);
+        dd($newDoctor);
         $newDoctor->fill($data);
-        // dd($newDoctor);
+        //dd($newDoctor);
         $newDoctor->specializations()->sync($data['specializations'] ?? []);
         $newDoctor->save();
 
@@ -116,9 +119,9 @@ class DoctorController extends Controller
     {
         $user = Auth::user();
         $doctor = $user->doctor;
-
         $specializations = Specialization::all();
-        return view('admin.doctors.edit', compact('specializations', 'doctor'));
+        $performances = ['Visita specialistica', 'Consulenza', 'Diagnosi', 'Certificazione'];
+        return view('admin.doctors.edit', compact('specializations', 'doctor', 'performances'));
     }
 
     /**

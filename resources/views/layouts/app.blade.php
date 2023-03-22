@@ -33,7 +33,7 @@
             <nav class="navbar navbar-expand-md shadow-sm">
                 <div class="container">
                     <a style="width: 30px;" class="navbar-brand d-flex align-items-center" href="{{ route('admin.dashboard') }}">
-                        <img class="img-fluid" src="{{ asset('assets/imgs/Doctor-logo.png') }}" alt="">
+                        <img class="img-fluid" src="{{ asset('assets/imgs/Doctor-logo.png') }}" alt="Bdoctor's logo">
                     </a>
     
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

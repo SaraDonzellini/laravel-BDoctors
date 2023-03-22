@@ -234,7 +234,7 @@ class DoctorSeeder extends Seeder
             $newDoctor->photo = $doctor['photo'];
             $newDoctor->address = $doctor['address'];
             $newDoctor->phone = $doctor['phone'];
-            $newDoctor->performances = $faker->randomElement($performances);
+            $newDoctor->performance = $faker->randomElement($performances);
             $newDoctor->visibility = true;
             $newDoctor->save();
         }

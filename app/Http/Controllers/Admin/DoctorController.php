@@ -24,7 +24,7 @@ class DoctorController extends Controller
         'phone.required' => 'Il numero di telefono è obbligatorio',
         'phone.numeric' => 'Il campo telefono deve contenere solo numeri',
         'specializations.required' => 'Il campo di specializzazioni è obbligatorio',
-        'performances.required' => 'Il campo performance è richiesto'
+        'performance.required' => 'Il campo performance è richiesto'
         // 'phone.max' => 'Il numero di telefono non può contenere più di :max caratteri',
     ];
 
@@ -36,7 +36,7 @@ class DoctorController extends Controller
         'phone' => 'required|numeric',
         'visibility' => 'nullable',
         'specializations' => ['required', 'array', 'min:1', 'exists:specializations,id'],
-        'performances' => ['required', 'min:1']
+        'performance' => ['required', 'string']
     ];
 
 
@@ -75,6 +75,7 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $data = $request->validate($this->validationRules, $this->customValidations);
         if (!array_key_exists('visibility', $data)) {
             $data['visibility'] = false;
@@ -87,7 +88,7 @@ class DoctorController extends Controller
         // dd($currentUser);
 
         $newDoctor = $currentUser->doctor;
-        dd($newDoctor);
+        // dd($newDoctor);
         $newDoctor->fill($data);
         //dd($newDoctor);
         $newDoctor->specializations()->sync($data['specializations'] ?? []);
@@ -133,13 +134,12 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     {
-        //dd($request->all());
         $data = $request->validate($this->validationRules, $this->customValidations);
         //dd($data);
         if (!array_key_exists('visibility', $data)) {
             $data['visibility'] = false;
         };
-
+        
         $data['photo'] = Storage::put('imgs/', $data['photo']);
         if (!str_starts_with($doctor->photo, 'http')) {
             Storage::delete($doctor->photo);
@@ -148,10 +148,11 @@ class DoctorController extends Controller
         if (!str_starts_with($doctor->curriculum, 'http')) {
             Storage::delete($doctor->curriculum);
         }
-
+        
         $doctor->specializations()->sync($data['specializations'] ?? []);
         $doctor->update($data);
-
+        // dd($request->all());
+        
         return redirect()->route('admin.doctors.show', $doctor->id)->with('message', "Il profilo è stato aggiornato con successo")->with('alert-type', 'info');
     }
 

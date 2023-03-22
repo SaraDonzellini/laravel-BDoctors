@@ -15,7 +15,7 @@ class Doctor extends Model
         'photo',
         'address',
         'phone',
-        'performances',
+        'performance',
         'visibility'
     ];
     public function user()

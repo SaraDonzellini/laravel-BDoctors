@@ -71,19 +71,19 @@
 
 
             <div class="d-flex justify-content-between">
-                <div class="mb-4 ms-2">
+                <div class="my_divbox mb-4 ms-2">
                     <a href="{{ route('admin.doctors.edit', $doctor->id) }}" class="my_btn">Modifica il tuo
                         profilo</a>
                 </div>
-                <div class="mb-4 ">
+                <div class="my_divbox mb-4 ">
                     <a href="{{ route('admin.messages.index', $doctor->id) }}" class="my_btn">Leggi i tuoi
                         messaggi</a>
                 </div>
-                <div class="mb-4">
+                <div class="my_divbox mb-4">
                     <a href="{{ route('admin.reviews.index', $doctor->id) }}" class="my_btn">Leggi le tue
                         recensioni</a>
                 </div>
-                <div class="mb-4 me-2">
+                <div class="my_divbox mb-4 me-2">
                     <a href="{{ route('admin.sponsorships.index', $doctor->id) }}" class=" my_btn">Scegli una
                         sponsorizzazione</a>
                 </div>

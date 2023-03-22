@@ -5,53 +5,23 @@
 @section('content')
 
 <section class="messages">
-
-    <div class="container py-4">
-
-        <div class="row">
-
-            <table class="table">
-                <!--Table head -->
-                <thead>
-                    <tr>
-                        <th scope="col">#id</th>
-                        <th scope="col">#user_id</th>
-                        <th scope="col">name</th>
-                        <th scope="col">surname</th>
-                        <th scope="col">email</th>
-                        {{-- <th scope="col">
-                            <a href="{{ route('admin.messages.create')}}" class="btn btn-primary px-4">
-                                <i class="fa-solid fa-plus"></i>
-                            </a>
-                        </th> --}}
-                    </tr>
-                </thead>
-
-                <!--Table body-->
-                <tbody>
-                    @foreach ($messages as $message)
-                    <tr>
-                        <td>{{ $message->id }}</td>
-                        <td>{{ $message->user_id }}</td>
-                        <td>{{ $message->name }}</td>
-                        <td>{{ $message->surname }}</td>
-                        <td>{{ $message->email }}</td>
-                        <td>
-                            <a href="{{ route('admin.messages.show', $message->id)}}" class="btn btn-primary">
-                                <i class="fa-regular fa-eye"></i>
-                            </a>
-                        </td>
-                
-                    </tr>
-                    @endforeach
-                </tbody>
-
-            </table>
-
+    <div class="container">
+            @foreach ($messages as $message)
+            <div class="card mb-3 mt-5 shadow-lg">
+                <div class="card bg-review  p-3 text-start">
+                    <div class="text text-light my-4">
+                        <span>Id: {{ $message->id }}</span>
+                        <h3 class="card-title fw-bold my-3">{{ $message->user->name }} {{ $message->user->surname }}</h3>
+                        <p>{{ $message->text }}</p>
+                        <a href="{{ route('admin.messages.show', $message->id) }}" class="btn btn-primary">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
-       
     </div>
-    
 </section>
 
 @endsection

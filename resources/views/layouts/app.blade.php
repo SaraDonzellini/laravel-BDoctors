@@ -87,7 +87,7 @@
     
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-dark
                                 " aria-labelledby="navbarDropdown" style="background-color: #00244a;">
-                                    <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profilo')}}</a>
+                                    <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profilo Utente')}}</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                         {{ __('Esci') }}

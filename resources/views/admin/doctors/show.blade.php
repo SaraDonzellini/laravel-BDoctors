@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Dottor {{ $doctor->user->name }}!
+    Dottor {{ $doctor->user->name }}! 
 @endsection
 
 @section('content')
@@ -14,8 +14,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="my_header d-flex align-items-center m-5">
-
-                    <img src="{{ asset("storage/$doctor->photo") }}" alt="Foto">
+                    <img src="{{ asset("storage/imgs/$doctor->photo") }}" alt="Foto">
                     <h3 class="ms-5 text-center fw-bold text-uppercase">{{ $doctor->user->name }} {{ $doctor->user->surname }}</h3>
                 </div>
                 <div class="row">
@@ -43,7 +42,7 @@
                 </div>
                 <div class="col-6 ">
                     <h5 class="m-5">Curriculum: </h5>
-                    <img class="my_curriculum" src="{{ asset("storage/$doctor->curriculum") }}" alt="CV">
+                    <img class="my_curriculum" src="{{ asset("storage/curriculum/$doctor->curriculum") }}" alt="CV">
                 </div>
             </div>
 

@@ -46,15 +46,15 @@
                             <li class="nav-item">
                                 <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.dashboard') ? 'fw-bold' : ''  }}" href="{{ route('admin.dashboard') }}">{{ __('Home') }}</a>
                             </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.messages.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.messages.index') }}">{{ __('Messaggi Ricevuti') }}</a>
-                            </li>
-    
+
                             <li class="nav-item">
                                 <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.doctors.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.doctors.index') }}">{{ __('Profilo Dottore') }}</a>
                             </li>
     
+                            <li class="nav-item">
+                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.messages.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.messages.index') }}">{{ __('Messaggi Ricevuti') }}</a>
+                            </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.reviews.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.reviews.index') }}">{{ __('Recensioni') }}</a>
                             </li>

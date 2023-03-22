@@ -49,7 +49,7 @@ class DoctorController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $doctor = $user->doctor;
+        $doctor = Doctor::findOrFail($user->id);
         return view('admin.doctors.show', compact('user', 'doctor'));
     }
 

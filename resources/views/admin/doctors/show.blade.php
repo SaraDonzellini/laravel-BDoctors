@@ -16,7 +16,7 @@
                 <div class="my_header d-flex align-items-center m-5">
 
                     <img src="{{ asset("storage/$doctor->photo") }}" alt="Foto">
-                    <h3 class="ms-5 text-center fw-bold">{{ $doctor->user->name }} {{ $doctor->user->surname }}</h3>
+                    <h3 class="ms-5 text-center fw-bold text-uppercase">{{ $doctor->user->name }} {{ $doctor->user->surname }}</h3>
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -58,33 +58,33 @@
 
             <div class="row">
                 <div class="col-5 m-5">
-                    <h5>Prestazione: {{ $doctor->performance }}</h5>
+                    <h5>Prestazione:</h5>
+                    <p>{{ $doctor->performance }}</p>
                 </div>
                 <div class="col-5 m-5">
-                    <h5>Specializzazioni:
-                        @foreach ($doctor->specializations as $specialization)
-                            #{{ $specialization->title }}
-                    </h5>
+                    <h5>Specializzazioni:</h5>
+                    @foreach ($doctor->specializations as $specialization)
+                        <p>{{ $specialization->title }}</p>
                     @endforeach
                 </div>
             </div>
 
 
             <div class="d-flex justify-content-between">
-                <div class="mb-2 ms-2">
-                    <a href="{{ route('admin.doctors.edit', $doctor->id) }}" class="btn my_btn">Modifica il tuo
+                <div class="mb-4 ms-2">
+                    <a href="{{ route('admin.doctors.edit', $doctor->id) }}" class="my_btn">Modifica il tuo
                         profilo</a>
                 </div>
-                <div class="mb-2 ">
-                    <a href="{{ route('admin.messages.index', $doctor->id) }}" class="btn my_btn">Leggi i tuoi
+                <div class="mb-4 ">
+                    <a href="{{ route('admin.messages.index', $doctor->id) }}" class="my_btn">Leggi i tuoi
                         messaggi</a>
                 </div>
-                <div class="mb-2">
-                    <a href="{{ route('admin.reviews.index', $doctor->id) }}" class="btn my_btn">Leggi le tue
+                <div class="mb-4">
+                    <a href="{{ route('admin.reviews.index', $doctor->id) }}" class="my_btn">Leggi le tue
                         recensioni</a>
                 </div>
-                <div class="mb-2 me-2">
-                    <a href="{{ route('admin.sponsorships.index', $doctor->id) }}" class="btn my_btn">Scegli una
+                <div class="mb-4 me-2">
+                    <a href="{{ route('admin.sponsorships.index', $doctor->id) }}" class=" my_btn">Scegli una
                         sponsorizzazione</a>
                 </div>
 

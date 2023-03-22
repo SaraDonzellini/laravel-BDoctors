@@ -11,54 +11,51 @@
     <h2 class="fs-4 text-primary my-4">
         Benvenuto/a {{ $user->name }}
     </h2>
-    
-    <p class="text-info">Sei loggato/a!</p>
-    
-    @else
 
+    @else
+    
     <h2 class="mt-5">Non sei loggato, loggati o registrati per accedere al sito.</h2>
     @endif
-    
-    <div class="col-12 d-flex gap-4">
 
-    {{-- Doctor's infos --}}
-    <div class="card col-4 p-4 mb-4 bg-white shadow rounded-lg">
-        
-        @include('admin.dashboard-partials.dash-doctor-info')
-        
-    </div>
-    
-    
-    {{-- Doctor's messages --}}
-    <div class="card col-8 p-4 mb-4 bg-white shadow rounded-lg">
-        
-        @include('admin.dashboard-partials.dash-messages')
-        
-    </div>
-    </div>
+    <div class="row position-relative">  
 
-
-    <div class="col-12 d-flex gap-4">
-    {{-- Doctor's curriculum --}}
-    <div class="card col-4 p-4 mb-4 bg-white shadow rounded-lg">
+        {{-- Doctor's infos --}}
+        <div class="card col-4 p-4 mb-4 bg-white shadow rounded-lg my-card">
+            
+            @include('admin.dashboard-partials.dash-doctor-info')
+            
+        </div>  
         
-        @include('admin.dashboard-partials.dash-curriculum')
-        
+        {{-- Doctor's messages --}}
+        <div class="card col-8 p-4 mb-4 bg-white shadow rounded-lg my-card">
+            
+            @include('admin.dashboard-partials.dash-messages')
+            
+        </div>
     </div>
 
-    {{-- Doctor's reviews --}}
-    <div class="card col-4 p-4 mb-4 bg-white shadow rounded-lg">
+    <div class="row row-cols-3">
         
-        @include('admin.dashboard-partials.dash-reviews')
+        {{-- Doctor's curriculum --}}
+        <div class="card p-4 mb-4 bg-white shadow rounded-lg my-card">
+            
+            @include('admin.dashboard-partials.dash-curriculum')
+            
+        </div>
         
-    </div>
-    
-    {{-- Sponsorships --}}
-    <div class="card col-4 p-4 mb-4 bg-white shadow rounded-lg">
+        {{-- Doctor's reviews --}}
+        <div class="card p-4 mb-4 bg-white shadow rounded-lg my-card">
+            
+            @include('admin.dashboard-partials.dash-reviews')
+            
+        </div>
         
-        @include('admin.dashboard-partials.dash-sponsorships')
-        
-    </div>
+        {{-- Sponsorships --}}
+        <div class="card p-4 mb-4 bg-white shadow rounded-lg my-card">
+            
+            @include('admin.dashboard-partials.dash-sponsorships')
+            
+        </div>
     </div>
 </div>
 @endsection

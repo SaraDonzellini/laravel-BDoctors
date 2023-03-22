@@ -20,9 +20,9 @@ $messages = Message::with('user')->where('user_id', Auth::user()->id)->latest()-
     {{-- Last messages --}}
     <div>
         @foreach ($messages as $message)
-        <p>{{ $message->name }}</p>
-        <p>{{ $message->surname }}</p>
-        <p>{{ $message->email }}</p>
+        <h5>
+            {{ $message->name }} {{ $message->surname }} <span>({{ $message->email }})</span>
+        </h5>
         <p>{{ $message->text }}</p>
         @endforeach
 

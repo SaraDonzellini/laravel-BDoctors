@@ -2,7 +2,7 @@
 namespace App\Models;
 use Illuminate\Support\Facades\Auth;
 
-$messages = Review::with('user')->where('user_id', Auth::user()->id)->latest()->take(2)->get();
+$reviews = Review::with('user')->where('user_id', Auth::user()->id)->latest()->take(2)->get();
 
 ?>
 
@@ -16,13 +16,13 @@ $messages = Review::with('user')->where('user_id', Auth::user()->id)->latest()->
         
     </div>
 
-    {{-- Last messages --}}
+    {{-- Last reviews --}}
     <div>
-        @foreach ($messages as $message)
-        <p>{{ $message->name }}</p>
-        <p>{{ $message->surname }}</p>
-        <p>{{ $message->email }}</p>
-        <p>{{ $message->text }}</p>
+        @foreach ($reviews as $review)
+        <h5>
+            {{ $review->name }} {{ $review->surname }}, <span>voto: {{ $review->vote }}</span>
+        </h5>
+        <p>{{ $review->text }}</p>
         @endforeach
 
     </div>

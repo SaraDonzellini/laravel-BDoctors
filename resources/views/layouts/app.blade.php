@@ -30,7 +30,7 @@
 
         <!--Header-->
         <header>
-            <nav class="navbar navbar-expand-md shadow-sm">
+            <nav class="navbar navbar-expand-md shadow-sm navbar-dark">
                 <div class="container">
                     <a style="width: 30px;" class="navbar-brand d-flex align-items-center" href="{{ route('admin.dashboard') }}">
                         <img class="img-fluid" src="{{ asset('assets/imgs/Doctor-logo.png') }}" alt="Bdoctor's logo">
@@ -44,15 +44,15 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.dashboard') ? 'fw-bold' : ''  }}" href="{{ route('admin.dashboard') }}">{{ __('Home') }}</a>
-                            </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.messages.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.messages.index') }}">{{ __('Messaggi Ricevuti') }}</a>
+                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.dashboard') ? 'fw-bold' : ''  }}" href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
                             </li>
     
                             <li class="nav-item">
                                 <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.doctors.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.doctors.index') }}">{{ __('Profilo Dottore') }}</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.messages.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.messages.index') }}">{{ __('Messaggi') }}</a>
                             </li>
     
                             <li class="nav-item">
@@ -60,7 +60,7 @@
                             </li>
     
                             <li class="nav-item">
-                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.sponsorships.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.sponsorships.index') }}">{{ __('Acquista Sponsorizzazioni') }}</a>
+                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.sponsorships.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.sponsorships.index') }}">{{ __('Sponsorizzazioni') }}</a>
                             </li>
                         </ul>
     
@@ -85,9 +85,9 @@
                                     {{ Auth::user()->name }}
                                 </a>
     
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="background-color: #00244a;">
-                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">{{__('Dashboard')}}</a>
-                                    <a class="dropdown-item" href="{{ url('profile') }}">{{__('Account')}}</a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-dark
+                                " aria-labelledby="navbarDropdown" style="background-color: #00244a;">
+                                    <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profilo')}}</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                         {{ __('Esci') }}

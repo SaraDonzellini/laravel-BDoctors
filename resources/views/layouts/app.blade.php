@@ -32,7 +32,7 @@
         <header>
             <nav class="navbar navbar-expand-md shadow-sm navbar-dark">
                 <div class="container">
-                    <a style="width: 30px;" class="navbar-brand d-flex align-items-center" href="{{ route('admin.dashboard') }}">
+                    <a style="width: 40px;" class="navbar-brand d-flex align-items-center" href="{{ route('admin.dashboard') }}">
                         <img class="img-fluid" src="{{ asset('assets/imgs/Doctor-logo.png') }}" alt="Bdoctor's logo">
                     </a>
     
@@ -43,24 +43,49 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav me-auto">
-                            <li class="nav-item">
-                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.dashboard') ? 'fw-bold' : ''  }}" href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
+                            <li class="nav-item d-flex flex-column text-center">
+                                <div class="box d-flex justify-content-center">
+                                    <a class="nav-link {{ (Route::currentRouteName() == 'admin.dashboard') ? 'fw-bold' : ''  }}" href="{{ route('admin.dashboard') }}">
+                                        <i class="fa-solid fa-solar-panel" style="color: #00c3a5;"></i>
+                                        <p>{{ __('Dashboard') }}</p>
+                                    </a>
+
+                                </div>
                             </li>
     
-                            <li class="nav-item">
-                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.doctors.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.doctors.index') }}">{{ __('Profilo Dottore') }}</a>
+                            <li class="nav-item d-flex flex-column text-center">
+                                <div class="box d-flex justify-content-center">
+                                <a class="nav-link {{ (Route::currentRouteName() == 'admin.doctors.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.doctors.index') }}">
+                                    <i class="fa-solid fa-address-card" style="color: #00c3a5;"></i>
+                                    <p>{{ __('Profilo Dottore') }}</p>
+                                </a></div>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.messages.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.messages.index') }}">{{ __('Messaggi') }}</a>
+                            <li class="nav-item d-flex flex-column text-center">
+                                <a class="nav-link {{ (Route::currentRouteName() == 'admin.messages.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.messages.index') }}">
+                                    <i class="fa-solid fa-envelope" style="color: #00c3a5;"></i>
+                                    <p>
+                                        {{ __('Messaggi') }}
+                                    </p>
+                                </a>
                             </li>
     
-                            <li class="nav-item">
-                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.reviews.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.reviews.index') }}">{{ __('Recensioni') }}</a>
+                            <li class="nav-item d-flex flex-column text-center">
+                                <a class="nav-link {{ (Route::currentRouteName() == 'admin.reviews.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.reviews.index') }}">
+                                    <i class="fa-regular fa-comment" style="color: #00c3a5;"></i>
+                                    <p>
+                                        {{ __('Recensioni') }}
+                                    </p>
+                                </a>
                             </li>
     
-                            <li class="nav-item">
-                                <a class="nav-link me-3 {{ (Route::currentRouteName() == 'admin.sponsorships.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.sponsorships.index') }}">{{ __('Sponsorizzazioni') }}</a>
+                            <li class="nav-item d-flex flex-column text-center">
+                                <a class="nav-link {{ (Route::currentRouteName() == 'admin.sponsorships.index') ? 'fw-bold' : ''  }}" href="{{ route('admin.sponsorships.index') }}">
+                                    <i class="fa-solid fa-money-bill-trend-up" style="color: #00c3a5;"></i>
+                                    <p>
+                                        {{ __('Sponsorizzazioni') }}
+                                    </p>
+                                </a>
                             </li>
                         </ul>
     

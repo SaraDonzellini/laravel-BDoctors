@@ -1,5 +1,5 @@
 @use 'partials/variables' as *;
-@use 'partials/view-login'as *;
+@use 'partials/view-login' as *;
 @import '~bootstrap/scss/bootstrap';
 
 
@@ -8,6 +8,29 @@ body {
     background-image: url('/public/assets/imgs/Bg-image.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    //backdrop-filter: blur(10px);
+
+    .my-card {
+        border-radius: 25px;
+        border-width: 0 !important;
+        background-color: $secondary-text-color !important;
+
+
+        a.btn-dash {
+            border-radius: 15px;
+            background-color: $primary-bg-color;
+            text-decoration: none;
+            color: $primary-text-color;
+            padding: .5rem 1rem;
+            font-weight: bold;
+        }
+
+        .doctor-profile-img {
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 25px;
+        }
+    }
 }
 
 header {

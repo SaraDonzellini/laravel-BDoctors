@@ -1,1 +1,21 @@
-@import '~bootstrap/scss/bootstrap'
+@use 'partials/variables' as *;
+@use 'partials/view-login'as *;
+@import '~bootstrap/scss/bootstrap';
+
+
+
+body {
+    background-image: url('/public/assets/imgs/Bg-image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    nav {
+        background-color: $primary-bg-color;
+    }
+
+    a {
+        color: $primary-text-color !important;
+    }
+}

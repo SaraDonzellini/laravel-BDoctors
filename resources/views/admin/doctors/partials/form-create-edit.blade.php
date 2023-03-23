@@ -98,12 +98,11 @@
 
     <!--Specializations-->
     
-    <label class="mb-3" for="specializations">Specializzazioni: (*)</label>
-    <div class="form-group gap-3">
-        <div class="form-check">
-            @foreach ($specializations as $specialization)
+    <label class="mb-3" for="specializations">Specializzazioni:</label>
+    <div class="form-group d-flex flex-wrap justify-content-evenly gap-3">
+        @foreach ($specializations as $specialization)
+            <div class="form-check">
                 <input type="checkbox" class="form-check-input @error('specialization') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" value="{{ $specialization->id }}"
-
                 @if ($errors->any())
                     @checked(in_array($specialization->id, old('specialization',[])))
                 @else
@@ -111,10 +110,11 @@
                 @endif
                 />
                 <label class="form-check-label mb-2" for="specialization{{ $specialization->id }}">{{ $specialization->title }}</label>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
 
     </div>
+
     <div class="card bg-dark">
         (*) I campi sono obbligatori
     </div>

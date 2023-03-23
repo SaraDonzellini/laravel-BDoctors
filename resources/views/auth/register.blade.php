@@ -18,7 +18,7 @@
                             <!--Email-->
                             <div class="mb-4 row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo Email') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo Email') }}(*)</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -36,7 +36,7 @@
                             <!--Password-->
                             <div class="mb-4 row">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}(*)</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -54,7 +54,7 @@
                             <!--Confirm Password-->
                             <div class="mb-4 row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}(*)</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
@@ -65,7 +65,7 @@
                             <!--Name-->
                             <div class="mb-4 row">
                                 <label for="name"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}(*)</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text"
@@ -83,7 +83,7 @@
                             <!--Surname-->
                             <div class="mb-4 row">
                                 <label for="surname"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Cognome') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Cognome') }}(*)</label>
 
                                 <div class="col-md-6">
                                     <input id="surname" type="text"
@@ -101,7 +101,7 @@
                             <!--Address-->
                             <div class="mb-4 row">
                                 <label for="address"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}(*)</label>
 
                                 <div class="col-md-6">
                                     <input id="address" type="text"
@@ -118,7 +118,7 @@
 
                             <!--Specializations-->
                             <div class="form-group mb-4">
-                                <label class="mb-3" for="specializations">Specializzazioni:</label>
+                                <label class="mb-3" for="specializations">Specializzazioni: (*)</label>
                                 @foreach ($specializations as $specialization)
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input @error('specializations') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" value="{{ $specialization->id }}">
@@ -126,6 +126,9 @@
                                     </div>
                                 @endforeach
 
+                            </div>
+                            <div class="card">
+                                (*) I campi sono obbligatori
                             </div>
 
                             <!--button Register-->

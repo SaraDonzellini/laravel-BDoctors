@@ -83,7 +83,15 @@ class DoctorController extends Controller
             $data['visibility'] = false;
         };
 
-        $data['photo'] = Storage::put('imgs/', $data['photo']);
+        // dd($request->hasFile('photo'));
+        if ($request->hasFile('photo')) {
+            // Salvo l'immagine caricata dall'utente
+            $data['photo'] = Storage::put('imgs/', $data['photo']);
+        } else {
+            // Imposto un'immagine di default
+            $data['photo'] = 'imgs/avatar_placeholder.jpg';
+        }
+        
         $data['curriculum'] = Storage::put('curriculum/', $data['curriculum']);
 
         $currentUser = Auth::user();

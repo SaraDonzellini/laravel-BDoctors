@@ -9,7 +9,7 @@ $sponsorships = Sponsorship::all();
 <section>
     <div class="d-flex justify-content-center p-4">
         {{-- Route to sponsorhips --}}
-        <a href="{{ route('admin.sponsorships.index', $doctor->id) }}" class="btn-dash">
+        <a href="{{ route('admin.sponsorships.index', $doctor->id) }}" class="btn-dash position-dash">
             Sponsorizzazioni
         </a>
     </div>

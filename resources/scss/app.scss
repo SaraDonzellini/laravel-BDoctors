@@ -23,6 +23,10 @@ body {
             color: $primary-text-color;
             padding: .5rem 1rem;
             font-weight: bold;
+            &.position-dash{
+                position: absolute;
+                top: -20px;
+            }
         }
 
         .doctor-profile-img {

@@ -13,7 +13,7 @@
     <!--Address-->
     <div class="mb-3">
         <label for="address" class="form-label">Indirizzo (*)</label>
-        <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address', $doctor->address )}}">
+        <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address', $doctor->address )}}" title="Inserisci un indirizzo valido" placeholder="Inserisci un indirizzo valido">
 
         <!--catch Errors-->
         @error ('address')
@@ -26,7 +26,7 @@
     <!--Bio-->
     <div class="mb-3">
         <label for="bio" class="form-label">Bio (*)</label>
-        <textarea name="bio" placeholder="Inserire una bio" class="form-control @error('bio') is-invalid @enderror"></textarea>
+        <textarea name="bio" placeholder="Inserire una biografia" class="form-control @error('bio') is-invalid @enderror"></textarea>
 
         <!--catch Errors-->
         @error ('bio')
@@ -41,7 +41,7 @@
         <label class="mb-3 me-4" for="performance">Prestazioni: (*)</label>
         @foreach ($performances as $performance)
             <div class="form-check me-4">
-                <input type="radio" class="form-check-input me-2 @error('performance') is-invalid @enderror" name="performance" value="{{ $performance }}"
+                <input type="radio" title="Scegli una prestazione" class="form-check-input me-2 @error('performance') is-invalid @enderror" name="performance" value="{{ $performance }}"
                 />
                 <label class="form-check-label mb-2" for="performance">{{ $performance }}</label>
             </div>
@@ -66,7 +66,7 @@
     <!--Pic Profile-->
     <div class="mb-3">
         <label for="photo" class="form-label">Foto Profilo</label>
-        <input type="file" name="photo" id="photo" class="form-control @error('photo') is-invalid @enderror" value="{{'photo', $doctor->photo}}">
+        <input type="file" title="Inserisci una foto profilo" name="photo" id="photo" class="form-control @error('photo') is-invalid @enderror" value="{{'photo', $doctor->photo}}">
 
         <!--catch error-->
         @error ('photo')
@@ -79,7 +79,7 @@
     <!--Curriculum-->
     <div class="mb-3">
         <label for="curriculum" class="form-label">Curriculum Vitae (il curriculum deve essere in formato immagine)(*)</label>
-        <input type="file" name="curriculum" id="curriculum" class="form-control @error('curriculum') is-invalid @enderror" value="{{'curriculum', $doctor->curriculum}}">
+        <input type="file" title="Inserisci un Curriculum Vitae" name="curriculum" id="curriculum" class="form-control @error('curriculum') is-invalid @enderror" value="{{'curriculum', $doctor->curriculum}}">
 
         <!--catch error-->
         @error ('curriculum')
@@ -92,7 +92,7 @@
     <!--Visibility-->
     <div class="mb-3">
         <label for="visibility" class="form-label me-3">Visibile (decidi se renderti visibile o meno ai pazienti)(*)</label>
-        <input type="checkbox" class="form-check-input @error('visibility') is-invalid @enderror" id="visibility" name="visibility" value="1" {{ old('visibility', $doctor->visibility) ? 'checked' : ''}}>
+        <input type="checkbox" title="decidi se renderti visibile o meno ai pazienti" class="form-check-input @error('visibility') is-invalid @enderror" id="visibility" name="visibility" value="1" {{ old('visibility', $doctor->visibility) ? 'checked' : ''}}>
     </div>
 
     <!--Specializations-->
@@ -100,7 +100,7 @@
     <div class="form-group d-flex flex-wrap justify-content-evenly gap-3">
         @foreach ($specializations as $specialization)
             <div class="form-check">
-                <input type="checkbox" class="form-check-input @error('specialization') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" value="{{ $specialization->id }}"
+                <input type="checkbox" title="Inserisci almeno una specializzazione" class="form-check-input @error('specialization') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" value="{{ $specialization->id }}"
                 @if ($errors->any())
                     @checked(in_array($specialization->id, old('specialization',[])))
                 @else

@@ -3,6 +3,8 @@
         <h4>Check errors</h4>
     </div>
 @endif
+<div class="card my_registration_card p-5">
+
 
 <form action="{{ route($route, $doctor->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -110,7 +112,7 @@
         @endforeach
 
     </div>
-    <div class="card">
+    <div class="card bg-dark">
         (*) I campi sono obbligatori
     </div>
 
@@ -121,3 +123,5 @@
         <button type="submit" class="btn btn-primary">Avanti</button>
     </div>
 </form>
+
+</div>

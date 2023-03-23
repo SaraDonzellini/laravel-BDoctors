@@ -7,10 +7,10 @@
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card my_registration_card">
                     <div class="card-header">{{ __('Registrazione Utente') }}</div>
 
-                    <div class="card-body">
+                    <div class="card-body ">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
@@ -127,7 +127,7 @@
                                 @endforeach
 
                             </div>
-                            <div class="card">
+                            <div class="card bg-dark">
                                 (*) I campi sono obbligatori
                             </div>
 

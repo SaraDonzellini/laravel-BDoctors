@@ -21,7 +21,7 @@
                     <div class="col-12">
                         <div class="my_box text-centered m-5">
                             <h4>
-                                Visibilità
+                                Visibilità (decidi se renderti visibile o meno ai pazienti)
                             </h4>
                             <form action="{{ route('admin.doctors.toggle', $doctor->id) }}" method="POST">
                                 @method('PATCH')

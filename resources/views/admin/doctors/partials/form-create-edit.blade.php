@@ -3,6 +3,8 @@
         <h4>Check errors</h4>
     </div>
 @endif
+<div class="card my_registration_card p-5">
+
 
 <form action="{{ route($route, $doctor->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -10,7 +12,7 @@
 
     <!--Address-->
     <div class="mb-3">
-        <label for="address" class="form-label">Indirizzo</label>
+        <label for="address" class="form-label">Indirizzo (*)</label>
         <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address', $doctor->address )}}">
 
         <!--catch Errors-->
@@ -23,7 +25,7 @@
 
     <!--Bio-->
     <div class="mb-3">
-        <label for="bio" class="form-label">Bio</label>
+        <label for="bio" class="form-label">Bio (*)</label>
         <textarea name="bio" placeholder="Inserire una bio" class="form-control @error('bio') is-invalid @enderror"></textarea>
 
         <!--catch Errors-->
@@ -36,7 +38,7 @@
 
     <!--Performances-->
     <div class="form-group d-flex ">
-        <label class="mb-3 me-4" for="performance">Prestazioni:</label>
+        <label class="mb-3 me-4" for="performance">Prestazioni: (*)</label>
         @foreach ($performances as $performance)
             <div class="form-check me-4">
                 <input type="radio" class="form-check-input me-2 @error('performance') is-invalid @enderror" name="performance" value="{{ $performance }}"
@@ -50,7 +52,7 @@
     <!--N° Telephone-->
     <div class="mb-3">
 
-        <label for="phone">Recapito Telefonico</label>
+        <label for="phone">Recapito Telefonico (*)</label>
         <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" placeholder="Inserire Recapito Telefonico" />
 
         <!--catch Errors-->
@@ -76,7 +78,7 @@
 
     <!--Curriculum-->
     <div class="mb-3">
-        <label for="curriculum" class="form-label">Curriculum Vitae</label>
+        <label for="curriculum" class="form-label">Curriculum Vitae (il curriculum deve essere in formato immagine)(*)</label>
         <input type="file" name="curriculum" id="curriculum" class="form-control @error('curriculum') is-invalid @enderror" value="{{'curriculum', $doctor->curriculum}}">
 
         <!--catch error-->
@@ -89,12 +91,12 @@
 
     <!--Visibility-->
     <div class="mb-3">
-        <label for="visibility" class="form-label me-3">Visibile</label>
+        <label for="visibility" class="form-label me-3">Visibile (decidi se renderti visibile o meno ai pazienti)(*)</label>
         <input type="checkbox" class="form-check-input @error('visibility') is-invalid @enderror" id="visibility" name="visibility" value="1" {{ old('visibility', $doctor->visibility) ? 'checked' : ''}}>
     </div>
 
     <!--Specializations-->
-    <label class="mb-3" for="specializations">Specializzazioni:</label>
+    <label class="mb-3" for="specializations">Specializzazioni: (*)</label>
     <div class="form-group d-flex flex-wrap justify-content-evenly gap-3">
         @foreach ($specializations as $specialization)
             <div class="form-check">
@@ -110,6 +112,9 @@
         @endforeach
 
     </div>
+    <div class="card bg-dark">
+        (*) I campi sono obbligatori
+    </div>
 
 
     <!--Buttons-->
@@ -118,3 +123,5 @@
         <button type="submit" class="btn btn-primary">Avanti</button>
     </div>
 </form>
+
+</div>

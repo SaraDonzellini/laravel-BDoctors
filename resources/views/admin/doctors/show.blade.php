@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="my_header d-flex align-items-center m-5">
-                    <img src="{{ asset("storage/$doctor->photo") }}" alt="{{$doctor->user->name}}'s image profile">
+                    <img  class="my_avatar" src="{{ asset("storage/$doctor->photo") }}" alt="{{$doctor->user->name}}'s image profile">
                     <h3 class="ms-5 text-center fw-bold text-uppercase">{{ $doctor->user->name }} {{ $doctor->user->surname }}</h3>
                 </div>
                 <div class="row">

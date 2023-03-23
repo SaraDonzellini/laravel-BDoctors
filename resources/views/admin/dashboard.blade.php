@@ -21,8 +21,8 @@
     
     <div class="row position-relative justify-content-around mb-5">  
         
-        @foreach ($doctor as $key)        
-            @if(empty($key))
+        @foreach ($doctor->getAttributes() as $fields=>$value)        
+            @if(empty($value))
                 <div class="w-100 bg-light border border-danger rounded-3 p-3 shadow d-flex justify-content-between align-items-center mb-4">
                     <span>
                         Ricordati di completare il tuo profilo dottore!

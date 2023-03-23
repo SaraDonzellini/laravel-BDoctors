@@ -27,7 +27,7 @@
                     <span>
                         Ricordati di completare il tuo profilo dottore!
                     </span>
-                    <a class="btn btn-dash" href="{{ route('admin.doctors.create', $doctor->id) }}">Completa profilo</a>
+                    <a class="btn-dash" href="{{ route('admin.doctors.create', $doctor->id) }}">Completa profilo</a>
                 </div>
                 @break
             @endif

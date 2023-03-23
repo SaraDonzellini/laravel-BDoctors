@@ -22,6 +22,7 @@
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
+                                    placeholder="Inserisci un'email valida"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email">
 
@@ -40,6 +41,7 @@
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
+                                    placeholder="Inserisci una password con almeno 8 caratteri"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="new-password">
 
@@ -58,6 +60,7 @@
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
+                                    placeholder="Inserisci una password con almeno 8 caratteri"
                                         name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
@@ -69,6 +72,7 @@
 
                                 <div class="col-md-6">
                                     <input id="name" type="text"
+                                        placeholder="Inserisci il tuo nome"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
                                         value="{{ old('name') }}" required autocomplete="name" autofocus>
 
@@ -87,6 +91,7 @@
 
                                 <div class="col-md-6">
                                     <input id="surname" type="text"
+                                    placeholder="Inserisci il tuo cognome"
                                         class="form-control @error('surname') is-invalid @enderror" name="surname"
                                         value="{{ old('surname') }}" required autocomplete="surname" autofocus>
 
@@ -105,6 +110,7 @@
 
                                 <div class="col-md-6">
                                     <input id="address" type="text"
+                                    placeholder="Inserisci il tuo indirizzo"
                                         class="form-control @error('address') is-invalid @enderror" name="address"
                                         value="{{ old('address') }}" required autocomplete="address" autofocus>
 
@@ -117,17 +123,17 @@
                             </div>
 
                             <!--Specializations-->
-                            <div class="form-group mb-4">
+                            <div class="form-group d-flex flex-wrap justify-content-evenly gap-3">
                                 <label class="mb-3" for="specializations">Specializzazioni: (*)</label>
                                 @foreach ($specializations as $specialization)
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input @error('specializations') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" value="{{ $specialization->id }}">
+                                    <div class="form-group">
+                                        <input type="checkbox" class="form-check-input @error('specializations') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" title="Inserisci almeno una specializzazione" value="{{ $specialization->id }}">
                                         <label class="form-check-label" for="specialization{{ $specialization->id }}">{{ $specialization->title }}</label>
                                     </div>
                                 @endforeach
 
                             </div>
-                            <div class="card bg-dark">
+                            <div class="card bg-dark mt-5 mb-5">
                                 (*) I campi sono obbligatori
                             </div>
 

@@ -18,6 +18,7 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
         $doctor = $user->doctor;
+        // dd($doctor);
         return view('admin.dashboard', compact('user', 'doctor'));
     }
 

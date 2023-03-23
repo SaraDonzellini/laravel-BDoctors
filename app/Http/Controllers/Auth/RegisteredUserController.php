@@ -55,11 +55,11 @@ class RegisteredUserController extends Controller
 
         $doctor = new Doctor([
             'address' => $request->address,
-            'bio' => 'da definire',
-            'curriculum' => 'da definire',
-            'photo' => 'da definire',
-            'phone' => 'da definire',
-            'performance' => 'da definire',
+            'bio' => '',
+            'curriculum' => '',
+            'photo' => '',
+            'phone' => '',
+            'performance' => '',
             'visibility' => true,
         ]);
 

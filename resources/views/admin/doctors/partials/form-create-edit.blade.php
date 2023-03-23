@@ -24,7 +24,7 @@
     <!--Bio-->
     <div class="mb-3">
         <label for="bio" class="form-label">Bio</label>
-        <textarea name="bio" placeholder="Inserire una bio" class="form-control @error('bio') is-invalid @enderror"></textarea>
+        <textarea name="bio" placeholder="Inserire una bio" class="form-control @error('bio') is-invalid @enderror">{{ old('bio', $doctor->bio )}}</textarea>
 
         <!--catch Errors-->
         @error ('bio')
@@ -40,6 +40,7 @@
         @foreach ($performances as $performance)
             <div class="form-check me-4">
                 <input type="radio" class="form-check-input me-2 @error('performance') is-invalid @enderror" name="performance" value="{{ $performance }}"
+                @if (old('performance', $doctor->performance) == $performance) checked @endif
                 />
                 <label class="form-check-label mb-2" for="performance">{{ $performance }}</label>
             </div>
@@ -51,7 +52,7 @@
     <div class="mb-3">
 
         <label for="phone">Recapito Telefonico</label>
-        <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" placeholder="Inserire Recapito Telefonico" />
+        <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" placeholder="Inserire Recapito Telefonico" value="{{ old('phone', $doctor->phone )}}" />
 
         <!--catch Errors-->
         @error ('phone')
@@ -94,11 +95,13 @@
     </div>
 
     <!--Specializations-->
+    
     <label class="mb-3" for="specializations">Specializzazioni:</label>
-    <div class="form-group d-flex flex-wrap justify-content-evenly gap-3">
-        @foreach ($specializations as $specialization)
-            <div class="form-check">
+    <div class="form-group gap-3">
+        <div class="form-check">
+            @foreach ($specializations as $specialization)
                 <input type="checkbox" class="form-check-input @error('specialization') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" value="{{ $specialization->id }}"
+
                 @if ($errors->any())
                     @checked(in_array($specialization->id, old('specialization',[])))
                 @else
@@ -106,8 +109,8 @@
                 @endif
                 />
                 <label class="form-check-label mb-2" for="specialization{{ $specialization->id }}">{{ $specialization->title }}</label>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
 
     </div>
 

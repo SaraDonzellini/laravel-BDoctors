@@ -2,7 +2,7 @@
     <div class="d-flex justify-content-center">
 
         {{-- Route to Doctor's show --}}
-        <a href="{{ route('admin.doctors.show', $doctor->id) }}" class="btn-dash">
+        <a href="{{ route('admin.doctors.show', $doctor->id) }}" class="btn-dash position-dash">
             Curriculum
         </a>
     </div>

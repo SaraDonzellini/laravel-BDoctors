@@ -17,13 +17,16 @@ body {
         color: $primary-text-color;
         padding: .5rem 1rem;
         font-weight: bold;
+        &.position-dash{
+            position: absolute;
+            top: -20px;
+        }
     }
     .my-card {
         border-radius: 25px;
         border-width: 0 !important;
         background-color: $secondary-text-color !important;
         padding: 3rem;
-
 
         .doctor-profile-img {
             background-size: cover;

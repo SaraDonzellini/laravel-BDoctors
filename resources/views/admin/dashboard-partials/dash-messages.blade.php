@@ -11,7 +11,7 @@ $messages = Message::with('user')->where('user_id', Auth::user()->id)->latest()-
     <div class="d-flex justify-content-center p-4">
 
         {{-- Route to Doctor's messages --}}
-        <a href="{{ route('admin.messages.index', $doctor->id) }}" class="btn-dash">
+        <a href="{{ route('admin.messages.index', $doctor->id) }}" class="btn-dash position-dash">
             Messaggi
         </a>
         

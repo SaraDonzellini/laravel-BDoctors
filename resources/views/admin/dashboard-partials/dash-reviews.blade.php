@@ -10,7 +10,7 @@ $reviews = Review::with('user')->where('user_id', Auth::user()->id)->latest()->t
     <div class="d-flex justify-content-center p-4">
 
         {{-- Route to Doctor's reviews --}}
-        <a href="{{ route('admin.reviews.index', $doctor->id) }}" class="btn-dash">
+        <a href="{{ route('admin.reviews.index', $doctor->id) }}" class="btn-dash position-dash">
             Recensioni
         </a>
         

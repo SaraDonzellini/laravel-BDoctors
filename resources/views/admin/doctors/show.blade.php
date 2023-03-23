@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Dottor {{ $doctor->user->name }}! 
+    Dottor {{ $doctor->user->name }}!
 @endsection
 
 @section('content')
@@ -11,12 +11,21 @@
                 {{ session('message') }}
             </div>
         @endif
-        <div class="row">
-            <div class="col-12">
+        <div class="row ">
+            <div class="col-6">
                 <div class="my_header d-flex align-items-center m-5">
-                    <img  class="my_avatar" src="{{ asset("storage/$doctor->photo") }}" alt="{{$doctor->user->name}}'s image profile">
-                    <h3 class="ms-5 text-center fw-bold text-uppercase">{{ $doctor->user->name }} {{ $doctor->user->surname }}</h3>
+                    <img class="my_avatar" src="{{ asset("storage/$doctor->photo") }}"
+                        alt="{{ $doctor->user->name }}'s image profile">
                 </div>
+            </div>    
+            <div class="col-6">
+                <h3 class="ms-5 text-center fw-bold text-uppercase my_header d-flex align-items-center m-5">{{ $doctor->user->name }}
+                    {{ $doctor->user->surname }}</h3>
+                
+                    <h5 class="m-5">Biografia: </h5>
+                    <p class="m-5"> {{ $doctor->bio }}</p>
+                
+            </div>
                 <div class="row">
                     <div class="col-12">
                         <div class="my_box text-centered m-5">
@@ -34,33 +43,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            
             <div class="row">
-                <div class="col-6">
-                    <h5 class="m-5">Biografia: </h5>
-                    <p class="m-5"> {{ $doctor->bio }}</p>
-                </div>
                 <div class="col-6 ">
-                    <h5 class="m-5">Curriculum: </h5>
-                    <img class="my_curriculum" src="{{ asset("storage/$doctor->curriculum") }}" alt="{{$doctor->user->name}}'s curriculum">
-                </div>
-            </div>
+                    <div class="box ">
+                        <h5 class="m-5">Curriculum: </h5>
+                        <img class="my_curriculum" src="{{ asset("storage/$doctor->curriculum") }}"
+                        alt="{{ $doctor->user->name }}'s curriculum">
 
-            <div class="row">
+                    </div>
+                </div>
                 <div class="col-5 m-5">
                     <h4>Indirizzo: {{ $doctor->address }}</h4>
-                </div>
-                <div class="col-5 m-5">
-                    <h4>Telefono: {{ $doctor->phone }}</h4>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-5 m-5">
+                    <h4>Telefono: {{ $doctor->phone }}</h4><br>
                     <h5>Prestazione:</h5>
-                    <p>{{ $doctor->performance }}</p>
-                </div>
-                <div class="col-5 m-5">
+                    <p>{{ $doctor->performance }}</p><br>
                     <h5>Specializzazioni:</h5>
                     @foreach ($doctor->specializations as $specialization)
                         <p>{{ $specialization->title }}</p>
@@ -68,21 +65,20 @@
                 </div>
             </div>
 
-
             <div class="d-flex justify-content-between">
-                <div class="my_divbox mb-4 ms-2">
+                <div class="my_divbox mt-5 mb-4 ms-2">
                     <a href="{{ route('admin.doctors.edit', $doctor->id) }}" class="my_btn">Modifica il tuo
                         profilo</a>
                 </div>
-                <div class="my_divbox mb-4 ">
+                <div class="my_divbox mt-5 mb-4 ">
                     <a href="{{ route('admin.messages.index', $doctor->id) }}" class="my_btn">Leggi i tuoi
                         messaggi</a>
                 </div>
-                <div class="my_divbox mb-4">
+                <div class="my_divbox mt-5 mb-4">
                     <a href="{{ route('admin.reviews.index', $doctor->id) }}" class="my_btn">Leggi le tue
                         recensioni</a>
                 </div>
-                <div class="my_divbox mb-4 me-2">
+                <div class="my_divbox mt-5 mb-4 me-2">
                     <a href="{{ route('admin.sponsorships.index', $doctor->id) }}" class=" my_btn">Scegli una
                         sponsorizzazione</a>
                 </div>

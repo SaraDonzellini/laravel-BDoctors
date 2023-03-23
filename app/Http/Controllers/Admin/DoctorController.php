@@ -49,7 +49,8 @@ class DoctorController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $doctor = Doctor::findOrFail($user->id);
+        $doctor = $user->doctor;
+        // dd($doctor);
         return view('admin.doctors.show', compact('user', 'doctor'));
     }
 
@@ -62,6 +63,7 @@ class DoctorController extends Controller
     {
         $user = Auth::user();
         $doctor = $user->doctor;
+        // dd($doctor);
         $specializations = Specialization::all();
         $performances = ['Visita specialistica', 'Consulenza', 'Diagnosi', 'Certificazione'];
         return view('admin.doctors.create', compact('specializations', 'doctor', 'performances'));
@@ -105,7 +107,6 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        //dump($doctor);
         $doctors = Doctor::with('user', 'specializations')->get();
         
         return view('admin.doctors.show', compact('doctor'));
@@ -152,6 +153,7 @@ class DoctorController extends Controller
         
         $doctor->specializations()->sync($data['specializations'] ?? []);
         $doctor->update($data);
+        // dd($doctor);
         // dd($request->all());
         
         return redirect()->route('admin.doctors.show', $doctor->id)->with('message', "Il profilo è stato aggiornato con successo")->with('alert-type', 'info');

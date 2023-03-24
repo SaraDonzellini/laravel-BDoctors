@@ -27,7 +27,7 @@
             {{$doctor->performance}}
         </p>
         <div class="dash-bio">
-            La mia biografia: bioasdasdasdasdasdasda
+            Biografia: {{$doctor->bio}}
         </div>
     </div>
 </section>

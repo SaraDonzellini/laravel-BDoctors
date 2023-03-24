@@ -15,4 +15,12 @@ class DoctorController extends Controller
             'response' => $doctor
         ]);
     }
+
+    public function show(Doctor $doctor){
+        $doctor = Doctor::with('user', 'specializations')->findOrFail($doctor->id);
+        return response()->json([
+            'success' => true,
+            'results' => $doctor
+        ]);
+    }
 }

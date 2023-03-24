@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class DoctorController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $doctor = Doctor::with('user', 'specializations')->paginate(3);
         return response()->json([
             'success' => true,
@@ -16,11 +17,14 @@ class DoctorController extends Controller
         ]);
     }
 
-    public function show(Doctor $doctor){
+    public function show(Doctor $doctor)
+    {
         $doctor = Doctor::with('user', 'specializations')->findOrFail($doctor->id);
+        $reviews = $doctor->user->reviews;
         return response()->json([
             'success' => true,
-            'results' => $doctor
+            'doctor' => $doctor,
+            'reviews' => $reviews
         ]);
     }
 }

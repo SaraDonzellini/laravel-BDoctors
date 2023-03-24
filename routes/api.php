@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\DoctorController;
+use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\SpecializationController;
 
 use Illuminate\Http\Request;
@@ -29,3 +30,8 @@ Route::get('/doctors/{doctor}',[ DoctorController::class, 'show'])->name('api.do
 //Rotta per API di specializzazioni
 
 Route::get('/specializations', [SpecializationController::class, 'index'])->name('api.specializations.index');
+
+
+//Rotta per API di Reviews
+
+Route::get('/reviews', [ReviewController::class, 'index'])->name('api.reviews.index');

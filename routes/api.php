@@ -26,7 +26,7 @@ Route::get('/doctors', [DoctorController::class, 'index'])->name('api.doctors.in
 
 Route::get('/doctors/{id}', [DoctorController::class, 'search'])->name('api.doctors.search');
 
-Route::get('/doctors/{doctor}',[ DoctorController::class, 'show'])->name('api.doctors.show');
+Route::get('/doctor/{doctor}', [DoctorController::class, 'show'])->name('api.doctors.show');
 
 
 //Rotta per API di specializzazioni

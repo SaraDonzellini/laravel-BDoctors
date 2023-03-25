@@ -29,11 +29,14 @@ class DoctorController extends Controller
         ]);
     }
 
-    public function show(Doctor $doctor){
+    public function show(Doctor $doctor)
+    {
         $doctor = Doctor::with('user', 'specializations')->findOrFail($doctor->id);
+        $reviews = $doctor->user->reviews;
         return response()->json([
             'success' => true,
-            'results' => $doctor
+            'doctor' => $doctor,
+            'reviews' => $reviews
         ]);
     }
 }

@@ -37,3 +37,7 @@ Route::get('/specializations', [SpecializationController::class, 'index'])->name
 //Rotta per API di Reviews
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('api.reviews.index');
+
+
+//Route per salvare una recensione proveniente dal front-end
+Route::post('/reviews', [ReviewController::class, 'store'])->name('api.reviews.store');

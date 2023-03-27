@@ -30,7 +30,7 @@
 
         <!--Header-->
         <header>
-            <nav class="navbar navbar-expand-md shadow-sm navbar-dark">
+            <nav class="navbar navbar-expand-lg shadow-lg navbar-dark">
                 <div class="container">
                     <a style="width: 40px;" class="navbar-brand d-flex align-items-center" href="{{ route('admin.dashboard') }}">
                         <img class="img-fluid" src="{{ asset('assets/imgs/Doctor-logo.png') }}" alt="Bdoctor's logo">

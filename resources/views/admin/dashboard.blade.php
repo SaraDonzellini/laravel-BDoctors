@@ -33,14 +33,14 @@
             @endif
         @endforeach
         {{-- Doctor's infos --}}
-        <div class="card col-12 col-md-5 col-lg-4 mb-5 bg-white shadow rounded-lg my-card">
+        <div class="card col-12 col-md-5 col-lg-4 mb-5 bg-white shadow-lg rounded-lg my-card">
             
             @include('admin.dashboard-partials.dash-doctor-info')
             
         </div>  
         
         {{-- Doctor's messages --}}
-        <div class="card col-12 col-md-6 col-lg-7 mb-5 bg-white shadow rounded-lg my-card">
+        <div class="card col-12 col-md-6 col-lg-7 mb-5 bg-white shadow-lg rounded-lg my-card">
             
             @include('admin.dashboard-partials.dash-messages')
             
@@ -50,21 +50,21 @@
     <div class="row justify-content-around">
         
         {{-- Doctor's curriculum --}}
-        <div class="card col-12 col-md-3 mb-5 bg-white shadow rounded-lg my-card">
+        <div class="card col-12 col-md-3 mb-5 bg-white shadow-lg rounded-lg my-card">
             
             @include('admin.dashboard-partials.dash-curriculum')
             
         </div>
         
         {{-- Doctor's reviews --}}
-        <div class="card col-12 col-md-4 mb-5 bg-white shadow rounded-lg my-card">
+        <div class="card col-12 col-md-4 mb-5 bg-white shadow-lg rounded-lg my-card">
             
             @include('admin.dashboard-partials.dash-reviews')
             
         </div>
         
         {{-- Sponsorships --}}
-        <div class="card col-12 col-md-3 mb-5 bg-white shadow rounded-lg my-card glass">
+        <div class="card col-12 col-md-3 mb-5 bg-white shadow-lg rounded-lg my-card glass">
             
             @include('admin.dashboard-partials.dash-sponsorships')
             

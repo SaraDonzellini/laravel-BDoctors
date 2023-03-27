@@ -22,7 +22,7 @@
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
-                                    placeholder="Inserisci un'email valida"
+                                    placeholder="Inserisci un'email valida" required
                                         class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email">
 
@@ -41,7 +41,7 @@
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
-                                    placeholder="Inserisci una password con almeno 8 caratteri"
+                                    placeholder="Inserisci una password con almeno 8 caratteri" required
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="new-password">
 
@@ -60,7 +60,7 @@
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
-                                    placeholder="Inserisci una password con almeno 8 caratteri"
+                                    placeholder="Inserisci una password con almeno 8 caratteri" required
                                         name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
 
                                 <div class="col-md-6">
                                     <input id="name" type="text"
-                                        placeholder="Inserisci il tuo nome"
+                                        placeholder="Inserisci il tuo nome" required
                                         class="form-control @error('name') is-invalid @enderror" name="name"
                                         value="{{ old('name') }}" required autocomplete="name" autofocus>
 
@@ -91,7 +91,7 @@
 
                                 <div class="col-md-6">
                                     <input id="surname" type="text"
-                                    placeholder="Inserisci il tuo cognome"
+                                    placeholder="Inserisci il tuo cognome" required
                                         class="form-control @error('surname') is-invalid @enderror" name="surname"
                                         value="{{ old('surname') }}" required autocomplete="surname" autofocus>
 
@@ -110,7 +110,7 @@
 
                                 <div class="col-md-6">
                                     <input id="address" type="text"
-                                    placeholder="Inserisci il tuo indirizzo"
+                                    placeholder="Inserisci il tuo indirizzo" required
                                         class="form-control @error('address') is-invalid @enderror" name="address"
                                         value="{{ old('address') }}" required autocomplete="address" autofocus>
 
@@ -127,7 +127,7 @@
                                 <label class="mb-3" for="specializations">Specializzazioni: (*)</label>
                                 @foreach ($specializations as $specialization)
                                     <div class="form-group">
-                                        <input type="checkbox" class="form-check-input @error('specializations') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" title="Inserisci almeno una specializzazione" value="{{ $specialization->id }}">
+                                        <input type="checkbox" class="form-check-input @error('specializations') is-invalid @enderror" id="specialization{{ $specialization->id }}" name="specializations[]" title="Inserisci almeno una specializzazione"  value="{{ $specialization->id }}">
                                         <label class="form-check-label" for="specialization{{ $specialization->id }}">{{ $specialization->title }}</label>
                                     </div>
                                 @endforeach

@@ -13,7 +13,7 @@
     <!--Address-->
     <div class="mb-3">
         <label for="address" class="form-label">Indirizzo (*)</label>
-        <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address', $doctor->address )}}" title="Inserisci un indirizzo valido" placeholder="Inserisci un indirizzo valido">
+        <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address', $doctor->address )}}" title="Inserisci un indirizzo valido" placeholder="Inserisci un indirizzo valido" required>
 
         <!--catch Errors-->
         @error ('address')
@@ -26,7 +26,7 @@
     <!--Bio-->
     <div class="mb-3">
         <label for="bio" class="form-label">Bio (*)</label>
-        <textarea name="bio" placeholder="Inserire una biografia" class="form-control @error('bio') is-invalid @enderror">{{ old('bio', $doctor->bio )}}</textarea>
+        <textarea name="bio" placeholder="Inserire una biografia" required class="form-control @error('bio') is-invalid @enderror">{{ old('bio', $doctor->bio )}}</textarea>
 
         <!--catch Errors-->
         @error ('bio')
@@ -41,7 +41,7 @@
         <label class="mb-3 me-4" for="performance">Prestazioni: (*)</label>
         @foreach ($performances as $performance)
             <div class="form-check me-4">
-                <input type="radio" title="Scegli una prestazione" class="form-check-input me-2 @error('performance') is-invalid @enderror" name="performance" value="{{ $performance }}"
+                <input type="radio"  required title="Scegli una prestazione" class="form-check-input me-2 @error('performance') is-invalid @enderror" name="performance" value="{{ $performance }}"
                 @if (old('performance', $doctor->performance) == $performance) checked @endif
                 />
                 <label class="form-check-label mb-2" for="performance">{{ $performance }}</label>
@@ -54,7 +54,7 @@
     <div class="mb-3">
 
         <label for="phone">Recapito Telefonico (*)</label>
-        <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" placeholder="Inserire Recapito Telefonico" value="{{ old('phone', $doctor->phone )}}" />
+        <input type="text" required class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" placeholder="Inserire Recapito Telefonico" value="{{ old('phone', $doctor->phone )}}" />
 
         <!--catch Errors-->
         @error ('phone')
@@ -80,7 +80,7 @@
     <!--Curriculum-->
     <div class="mb-3">
         <label for="curriculum" class="form-label">Curriculum Vitae (il curriculum deve essere in formato immagine)(*)</label>
-        <input type="file" title="Inserisci un Curriculum Vitae" name="curriculum" id="curriculum" class="form-control @error('curriculum') is-invalid @enderror" value="{{'curriculum', $doctor->curriculum}}">
+        <input type="file" required title="Inserisci un Curriculum Vitae" name="curriculum" id="curriculum" class="form-control @error('curriculum') is-invalid @enderror" value="{{'curriculum', $doctor->curriculum}}">
 
         <!--catch error-->
         @error ('curriculum')

@@ -37,7 +37,7 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         $messagge = new Message();
-        $messagge->user_id = 10;
+        $messagge->user_id = $request->userId;
         $messagge->name = $request->input('name');
         $messagge->surname = $request->input('surname');
         $messagge->email = $request->input('email');

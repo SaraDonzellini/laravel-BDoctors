@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\DoctorController;
+use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\ReviewController;
 use App\Http\Controllers\Api\SpecializationController;
 
@@ -37,3 +38,6 @@ Route::get('/specializations', [SpecializationController::class, 'index'])->name
 //Rotta per API di Reviews
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('api.reviews.index');
+
+//Rotta per API di Messages
+Route::post('/messages', [MessageController::class, 'store'])->name('api.messages.store');

@@ -39,5 +39,9 @@ Route::get('/specializations', [SpecializationController::class, 'index'])->name
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('api.reviews.index');
 
+
+//Route per salvare una recensione proveniente dal front-end
+Route::post('/reviews', [ReviewController::class, 'store'])->name('api.reviews.store');
+
 //Rotta per API di Messages
 Route::post('/messages', [MessageController::class, 'store'])->name('api.messages.store');

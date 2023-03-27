@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
+
 use App\Models\Specialization;
 use App\Models\Doctor;
 use App\Http\Controllers\Controller;
@@ -8,7 +9,8 @@ use Illuminate\Http\Request;
 
 class DoctorController extends Controller
 {
-    public function index() {
+    public function index()
+    {
 
         $doctor = Doctor::with('user', 'specializations')->paginate(6);
         return response()->json([
@@ -17,11 +19,12 @@ class DoctorController extends Controller
         ]);
     }
 
-    public function search($id) {
-        if ($id){
-            $doctor = Specialization::findOrFail($id)->doctors()->with('user','specializations')->paginate(6);
-        }else{
-            $doctor = Doctor::with('user', 'specializations')->paginate(6); 
+    public function search($id)
+    {
+        if ($id) {
+            $doctor = Specialization::findOrFail($id)->doctors()->with('user', 'specializations')->paginate(6);
+        } else {
+            $doctor = Doctor::with('user', 'specializations')->paginate(6);
         }
         return response()->json([
             'success' => true,
@@ -32,11 +35,13 @@ class DoctorController extends Controller
     public function show(Doctor $doctor)
     {
         $doctor = Doctor::with('user', 'specializations')->findOrFail($doctor->id);
+        $userId = $doctor->user->id;
         $reviews = $doctor->user->reviews;
         return response()->json([
             'success' => true,
             'doctor' => $doctor,
-            'reviews' => $reviews
+            'reviews' => $reviews,
+            'userId' => $userId
         ]);
     }
 }

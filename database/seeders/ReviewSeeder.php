@@ -20,25 +20,25 @@ class ReviewSeeder extends Seeder
             [
                 'name' => 'Mario',
                 'surname' => 'Rossi',
-                'text' => 'Ottimo prodotto, lo consiglio vivamente!',
+                'text' => 'Ottimo servizio, lo consiglio vivamente!',
                 'vote' => 4
             ],
             [
                 'name' => 'Giuseppe',
                 'surname' => 'Verdi',
-                'text' => 'Non sono soddisfatto del prodotto, troppo costoso.',
+                'text' => 'Non sono soddisfatto della visita, troppo costosa.',
                 'vote' => 2
             ],
             [
                 'name' => 'Luigi',
                 'surname' => 'Bianchi',
-                'text' => 'Prodotto di media qualità, nulla di eccezionale.',
+                'text' => 'Servizio di media qualità, nulla di eccezionale.',
                 'vote' => 3
             ],
             [
                 'name' => 'Paolo',
                 'surname' => 'Neri',
-                'text' => 'Ho comprato questo prodotto e ne sono rimasto molto soddisfatto!',
+                'text' => 'Ho prenotato questa visita e ne sono rimasto molto soddisfatto!',
                 'vote' => 4
             ],
             [
@@ -50,9 +50,81 @@ class ReviewSeeder extends Seeder
             [
                 'name' => 'Marco',
                 'surname' => 'Buti',
-                'text' => 'Prodotto di qualità, superiore alle mie aspettative.',
+                'text' => 'Dottore molto professionale, superiore alle mie aspettative.',
                 'vote' => 4
-            ]
+            ],
+            [
+                'name' => 'Carlo',
+                'surname' => 'Magno',
+                'text' => 'Un servizio molto accurato e professionale, lo consiglio vivamente!',
+                'vote' => 4
+            ],
+            [
+                'name' => 'Gianni',
+                'surname' => 'Verga',
+                'text' => 'Servizio troppo costoso rispetto alla qualità',
+                'vote' => 2
+            ],
+            [
+                'name' => 'Marianna',
+                'surname' => 'Neri',
+                'text' => 'Nulla di eccezionale, avevo delle aspettative più alte.',
+                'vote' => 3
+            ],
+            [
+                'name' => 'Giacomo',
+                'surname' => 'Bizantin',
+                'text' => 'La visita specialistica da me richiesta mi ha molto soddisfatto',
+                'vote' => 4
+            ],
+            [
+                'name' => 'Stefano',
+                'surname' => 'Tortellini',
+                'text' => 'Visita troppo costosa e per niente professionale. Sconsigliato.',
+                'vote' => 1
+            ],
+            [
+                'name' => 'Riccardo',
+                'surname' => 'Genovesi',
+                'text' => 'La bravura di questo dottore è stata di gran lunga superiore alle mie aspettative.',
+                'vote' => 4
+            ],
+                [
+                'name' => 'Sara',
+                'surname' => 'Gernardi',
+                'text' => 'Ottimo servizio, molto consigliato per chi vuole un servizio professionale.',
+                'vote' => 4
+            ],
+            [
+                'name' => 'Lisa',
+                'surname' => 'Zanzibar',
+                'text' => 'Mi aspettavo un trattamento più efficiente.',
+                'vote' => 2
+            ],
+            [
+                'name' => 'Alessandro',
+                'surname' => 'Verdicchi',
+                'text' => 'Servizio di media qualità, il dottore poco professionale ma simpatico.',
+                'vote' => 3
+            ],
+            [
+                'name' => 'Manuele',
+                'surname' => 'Della libera',
+                'text' => 'Servizio puntuale e accurato, molto soddisfatto.',
+                'vote' => 4
+            ],
+            [
+                'name' => 'Jerry',
+                'surname' => 'Kent',
+                'text' => 'Il servizio non mi ha soddisfatto molto e nemmeno l\'atteggiamento del dottore.',
+                'vote' => 1
+            ],
+            [
+                'name' => 'Luigino',
+                'surname' => 'Cambrini',
+                'text' => 'Un dottore appassionato al suo lavoro. Consigliatissimo!',
+                'vote' => 4
+            ],
         ];
 
         foreach ($reviews as $review) {

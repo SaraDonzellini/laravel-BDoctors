@@ -18,7 +18,7 @@ class ReviewController extends Controller
 
     public function index()
     {
-        $reviews = Review::with('user')->where('user_id', Auth::user()->id)->get();
+        $reviews = Review::with('user')->where('user_id', Auth::user()->id)->latest()->get();
         return view('admin.reviews.index', compact('reviews'));
     }
 
@@ -29,7 +29,6 @@ class ReviewController extends Controller
      */
     public function create()
     {
-       
     }
 
     /**
@@ -40,7 +39,6 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        
     }
 
     /**
@@ -51,7 +49,6 @@ class ReviewController extends Controller
      */
     public function show(Review $review)
     {
-        
     }
 
     /**
@@ -62,7 +59,6 @@ class ReviewController extends Controller
      */
     public function edit(Review $review)
     {
-        
     }
 
     /**
@@ -74,7 +70,6 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-    
     }
 
     /**
@@ -85,6 +80,5 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
-        
     }
 }

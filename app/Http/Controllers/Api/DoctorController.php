@@ -12,7 +12,7 @@ class DoctorController extends Controller
     public function index()
     {
 
-        $doctor = Doctor::with('user', 'specializations')->paginate(6);
+        $doctor = Doctor::with('user', 'user.reviews', 'specializations')->paginate(6);
         return response()->json([
             'success' => true,
             'response' => $doctor

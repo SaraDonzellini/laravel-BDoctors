@@ -172,7 +172,3 @@
         
     }
 </script>
-
-<style>
-
-</style>

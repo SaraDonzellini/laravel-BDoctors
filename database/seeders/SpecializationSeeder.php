@@ -48,58 +48,6 @@ class SpecializationSeeder extends Seeder
                 'title' => 'Otorino',
                 'color' => '#DADAD9'
             ],
-            [
-                'title' => 'Dentista',
-                'color' => '#5BC3EB'
-            ],
-            [
-                'title' => 'Endocrinologo',
-                'color' => '#EEE0CB'
-            ],
-            [
-                'title' => 'Neurologo',
-                'color' => '#BAA898'
-            ],
-            [
-                'title' => 'Fisioterapista',
-                'color' => '#BFD7EA'
-            ],
-            [
-                'title' => 'Pediatra',
-                'color' => '#FAF8D4'
-            ],
-            [
-                'title' => 'Psicoterapeuta',
-                'color' => '#EBDCCB'
-            ],
-            [
-                'title' => 'Andrologo',
-                'color' => '#C3BAAA'
-            ],
-            [
-                'title' => 'Proctologo',
-                'color' => '#B2A3B5'
-            ],
-            [
-                'title' => 'Logopedista',
-                'color' => '#B098A4'
-            ],
-            [
-                'title' => 'Medico competente',
-                'color' => '#DBD9DB'
-            ],
-            [
-                'title' => 'Sessuologo',
-                'color' => '#E5EBEA'
-            ],
-            [
-                'title' => 'Chirurgo pediatrico',
-                'color' => '#F0A202'
-            ],
-            [
-                'title' => 'Medico genetista',
-                'color' => '#DB995A'
-            ],
         ];
 
         foreach ($specializations as $specialization) {

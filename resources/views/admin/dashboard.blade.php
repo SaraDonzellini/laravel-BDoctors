@@ -25,7 +25,7 @@
             @if(empty($value))
                 <div class="w-100 bg-light border border-danger rounded-3 p-3 shadow d-flex justify-content-between align-items-center mb-4">
                     <span>
-                        Ricordati di completare il tuo profilo dottore!
+                        Il tuo profilo non è ancora visibile perchè incompleto.
                     </span>
                     <a class="btn-dash" href="{{ route('admin.doctors.create', $doctor->id) }}">Completa profilo</a>
                 </div>

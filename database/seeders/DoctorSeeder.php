@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+
 use App\Models\Doctor;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -203,10 +204,10 @@ class DoctorSeeder extends Seeder
                 'bio' => 'Dottore con laurea in Medicina e chirurgia dal 1991 ottenuta a Torino. Sono iscritto all\'albo Provinciale dei Medici Chirurghi di TORINO dal 25/05/1992. Attualmente lavora in provincia di TO.
             Mi occupo della prevenzione, della valutazione e della cura delle malattie che coinvolgono la popolazione anziana (Malattia di Alzheimer e Demenze, Malattia di Parkinson e Disturbi del Movimento, Malattie Cerebrovascolari,valutazione della non autosufficienza con certificazione per pensione d\'invalidità e di accompagno e legge 104, completi di scale di valutazione ),effettuando Test per Disturbi della Memoria e della Cognitività, dell\'Umore e del Comportamento, affrontando non solo le problematiche cliniche acute, post-acute e croniche , ma anche quelle psicologiche e socio-economiche.'
             ],
-        ]; 
+        ];
         $performances = ['Visita specialistica', 'Consulenza', 'Diagnosi', 'Certificazione'];
 
-        $users= User::all();
+        $users = User::all();
 
         foreach ($doctors as $key => $doctor) {
             $newDoctor = new Doctor();
@@ -217,7 +218,7 @@ class DoctorSeeder extends Seeder
             $newDoctor->address = $doctor['address'];
             $newDoctor->phone = $doctor['phone'];
             $newDoctor->performance = $faker->randomElement($performances);
-            $newDoctor->visibility = false;
+            $newDoctor->visibility = true;
             $newDoctor->save();
         }
     }

@@ -6,13 +6,20 @@ use App\Models\Specialization;
 use App\Models\Doctor;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use League\Flysystem\Visibility;
 
 class DoctorController extends Controller
 {
     public function index()
     {
 
-        $doctor = Doctor::with('user', 'user.reviews', 'specializations')->paginate(6);
+        $allDoctors = Doctor::with('user', 'user.reviews', 'specializations')->paginate(6);
+        $doctor = [];
+        foreach ($allDoctors as $availableDoctor) {
+            if ($availableDoctor->visibility == 1) {
+                array_push($doctor, $availableDoctor);
+            }
+        }
         return response()->json([
             'success' => true,
             'response' => $doctor

@@ -17,6 +17,7 @@ class DoctorController extends Controller
         'bio.min' => 'Il campo Bio deve contenere almeno :min caratteri',
         'curriculum.required' => 'Il Curriculum è necessario',
         'curriculum.image' => 'Il formato del curriculum è errato',
+        'photo.required' => 'La foto è richiesta',
         'photo.image' => 'Il formato della foto è errato',
         'address.required' => 'L\'indirizzo è obbligatorio',
         'address.min' => 'L\'indirizzo deve contenere almeno :min caratteri',
@@ -31,7 +32,7 @@ class DoctorController extends Controller
     public $validationRules = [
         'bio' => 'required|min:10',
         'curriculum' => 'required|image',
-        'photo' => 'nullable|image',
+        'photo' => 'required|image',
         'address' => 'required|min:3|max:100',
         'phone' => 'required|numeric',
         'visibility' => 'nullable',

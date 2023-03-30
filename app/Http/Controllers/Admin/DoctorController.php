@@ -91,7 +91,7 @@ class DoctorController extends Controller
             // Imposto un'immagine di default
             $data['photo'] = 'imgs/avatar_placeholder.jpg';
         }
-        
+
         $data['curriculum'] = Storage::put('curriculum/', $data['curriculum']);
 
         $currentUser = Auth::user();
@@ -116,7 +116,7 @@ class DoctorController extends Controller
     public function show(Doctor $doctor)
     {
         $doctors = Doctor::with('user', 'specializations')->get();
-        
+
         return view('admin.doctors.show', compact('doctor'));
     }
 
@@ -149,21 +149,21 @@ class DoctorController extends Controller
         if (!array_key_exists('visibility', $data)) {
             $data['visibility'] = false;
         };
-        
+
         $data['photo'] = Storage::put('imgs/', $data['photo']);
-        if (!str_starts_with($doctor->photo, 'http')) {
-            Storage::delete($doctor->photo);
-        }
+        // if (!str_starts_with($doctor->photo, 'http')) {
+        //     Storage::delete($doctor->photo);
+        // }
         $data['curriculum'] = Storage::put('curriculum/', $data['curriculum']);
-        if (!str_starts_with($doctor->curriculum, 'http')) {
-            Storage::delete($doctor->curriculum);
-        }
-        
+        // if (!str_starts_with($doctor->curriculum, 'http')) {
+        //     Storage::delete($doctor->curriculum);
+        // }
+
         $doctor->specializations()->sync($data['specializations'] ?? []);
         $doctor->update($data);
         // dd($doctor);
         // dd($request->all());
-        
+
         return redirect()->route('admin.doctors.show', $doctor->id)->with('message', "Il profilo è stato aggiornato con successo")->with('alert-type', 'info');
     }
 

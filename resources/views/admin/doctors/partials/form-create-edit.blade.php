@@ -66,8 +66,8 @@
 
     <!--Pic Profile-->
     <div class="mb-3">
-        <label for="photo" class="form-label">Foto Profilo</label>
-        <input type="file" title="Inserisci una foto profilo" name="photo" id="photo" class="form-control @error('photo') is-invalid @enderror" value="{{'photo', $doctor->photo}}">
+        <label for="photo" class="form-label">Foto Profilo (*)</label>
+        <input type="file" required title="Inserisci una foto profilo" name="photo" id="photo" class="form-control @error('photo') is-invalid @enderror" value="{{old('photo', $doctor->photo)}}">
 
         <!--catch error-->
         @error ('photo')
@@ -80,7 +80,7 @@
     <!--Curriculum-->
     <div class="mb-3">
         <label for="curriculum" class="form-label">Curriculum Vitae (il curriculum deve essere in formato immagine)(*)</label>
-        <input type="file" required title="Inserisci un Curriculum Vitae" name="curriculum" id="curriculum" class="form-control @error('curriculum') is-invalid @enderror" value="{{'curriculum', $doctor->curriculum}}">
+        <input type="file" required title="Inserisci un Curriculum Vitae" name="curriculum" id="curriculum" class="form-control @error('curriculum') is-invalid @enderror" value="{{old('curriculum', $doctor->curriculum)}}">
 
         <!--catch error-->
         @error ('curriculum')

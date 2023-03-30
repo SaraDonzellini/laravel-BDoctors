@@ -31,9 +31,9 @@
         <tbody>
             <tr class="text-dark">
                 <td>{{ $sponsorship->id }}</td>
-                <td>{{ $sponsorship->price }}</td>
-                <td>{{ $sponsorship->duration }}</td>
-                <td>{{ $sponsorship->specifics}}</td>
+                <td>{{ $sponsorship->price }} &euro;</td>
+                <td>{{ $sponsorship->duration }} ore</td>
+                <td class="text-capitalize">{{ $sponsorship->specifics}}</td>
                 <td>
                     <a class = "btn btn-sm btn-primary " href=" {{ route ( 'admin.sponsorships.show' , $sponsorship->id ) }}" >Show</a>
                     {{-- <a class = "btn btn-sm btn-warning " href=" {{ route ( 'admin.sponsorships.edit' , $sponsorship->id ) }}" >Edit</a>

@@ -4,6 +4,11 @@
 @section('content')
     <div class="view">
         <div class="container ">
+            @if (session('message'))
+                <div class="alert alert-{{ session('alert-type') }}">
+                    {{ session('message') }}
+                </div>
+            @endif
             <div class="row justify-content-center">
                 <div class="col-12 p-5">
                     <div class="card p-3 text-start bg-spons">
@@ -12,11 +17,11 @@
                                 <h1 class="text-capitalize">
                                     {{ $sponsorship->specifics }}
                                 </h1>
-                                <p >
+                                <p>
                                     {{ $sponsorship->price }} &euro;
                                 </p>
                                 <p>
-                                    {{ $sponsorship->duration }} ore
+                                    Una sponsorizzazione che dura {{ $sponsorship->duration }} ore per rimanere in homepage!
                                 </p>
                             </div>
                             <div class="col-6">

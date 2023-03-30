@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', "Sponsorizzazioni")
 
 @section('content')
     <div class="view">

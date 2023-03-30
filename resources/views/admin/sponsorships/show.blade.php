@@ -25,7 +25,7 @@
                                 </p>
                             </div>
                             <div class="col-6">
-                                <a href="" class="btn btn-primary">Acquista</a>
+                                <a href="#" class="btn btn-primary">Acquista</a>
                             </div>
                         </div>
                     </div>

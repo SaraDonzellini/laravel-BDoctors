@@ -159,13 +159,13 @@
         let pw2 = document.getElementById("password2").value;
         //check empty password field  
         if (pw == "") {
-            document.getElementById("message").innerHTML = "**Fill the password please!";
+            document.getElementById("message").innerHTML = "**Serve una password!";
             return false;
         }
 
         //password match 
         if (pw !== pw2) {
-            document.getElementById("message2").innerHTML = "**Password must match";
+            document.getElementById("message2").innerHTML = "**La password deve combaciare";
             return false;
         } 
 ;

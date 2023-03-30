@@ -17,11 +17,13 @@ body {
         color: $primary-text-color;
         padding: .5rem 1rem;
         font-weight: bold;
-        &.position-dash{
+
+        &.position-dash {
             position: absolute;
             top: -20px;
         }
     }
+
     .my-card {
         border-radius: 25px;
         border-width: 0 !important;
@@ -50,7 +52,7 @@ header {
     width: 80%;
 }
 
-.my_header{
+.my_header {
     width: 50%;
 }
 
@@ -80,7 +82,7 @@ div.my_divbox a:hover {
 }
 
 
-.my_registration_card{
+.my_registration_card {
     background-color: $secondary-bg-color;
     color: $secondary-text-color;
 }
@@ -108,4 +110,40 @@ textarea:invalid {
 
 textarea:valid {
     border: 2px solid black;
+}
+
+
+// Braintree payment
+.button {
+    cursor: pointer;
+    font-weight: 500;
+    left: 3px;
+    line-height: inherit;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
+}
+
+.button--small {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+}
+
+.button--green {
+    outline: none;
+    background-color: #64d18a;
+    border-color: #64d18a;
+    color: white;
+    transition: all 200ms ease;
+}
+
+.button--green:hover {
+    background-color: #8bdda8;
+    color: white;
 }

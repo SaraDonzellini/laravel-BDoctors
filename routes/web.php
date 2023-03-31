@@ -1,10 +1,12 @@
 <?php
+
 use App\Http\Controllers\Admin\SponsorshipController as SponsorshipController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\Sponsor_UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +20,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/', [AuthenticatedSessionController::class, 'create'])
-                ->name('login');
+    ->name('login');
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -35,5 +38,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::post('/sponsor_user', [Sponsor_UserController::class, 'associateSponsorshipWithUser'])
+    ->middleware('auth')
+    ->name('sponsor_user');
 
 require __DIR__ . '/auth.php';

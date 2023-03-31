@@ -55,7 +55,7 @@ class User extends Authenticatable
         return $this->hasOne(Doctor::class);
     }
 
-    public function sponsorhips()
+    public function sponsorships()
     {
         return $this->belongsToMany(Sponsorship::class);
     }

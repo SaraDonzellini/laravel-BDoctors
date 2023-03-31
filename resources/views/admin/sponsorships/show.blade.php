@@ -3,6 +3,7 @@
 @section('title', "Sponsorizzazioni")
 
 @section('content')
+
     <div class="view">
         <div class="container ">
             @if (session('message'))
@@ -29,7 +30,11 @@
                         <script src="https://js.braintreegateway.com/web/dropin/1.36.0/js/dropin.js"></script>
                         
                         <div id="dropin-container"></div>
-                        <button id="submit-button" class="button button--small button--green">Purchase</button>
+                        <form method="POST" action="{{ route('sponsor_user') }}">
+                            @csrf
+                            <input type="hidden" name="sponsorship_id" value="{{ $sponsorship->id }}">
+                            <button type="submit" id="submit-button" class="button button--small button--green">Acquista</button>
+                        </form>
                     </div>
                 </div>
             </div>

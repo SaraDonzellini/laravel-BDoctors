@@ -21,7 +21,7 @@
 
             <div class="row justify-content-around">
                 @foreach ($sponsorships as $sponsorship)
-                    <div class="card pb-3 col-3 text-center">
+                    <div class="card pb-3 col-12 col-md-3 mb-4 text-center">
                         <h4 class="text-uppercase py-3 type-sponsor text-white">{{ $sponsorship->specifics }}</h4>
                         <div>
                             <h5 class="card-title pt-3">Durata: {{ $sponsorship->duration }} ore</h5>

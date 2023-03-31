@@ -13,7 +13,7 @@ class DoctorController extends Controller
     public function index()
     {
 
-        $allDoctors = Doctor::with('user', 'user.reviews', 'specializations')->get();
+        $allDoctors = Doctor::with('user', 'user.reviews', 'user.sponsorships', 'specializations')->get();
         $doctor = [];
         foreach ($allDoctors as $availableDoctor) {
             if ($availableDoctor->visibility == 1) {

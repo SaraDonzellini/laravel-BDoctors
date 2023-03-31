@@ -63,6 +63,7 @@ header {
     background-color: $primary-bg-color;
     height: 50px;
     color: white;
+    border-radius: 5px;
 }
 
 .my_btn {
@@ -128,3 +129,17 @@ textarea:valid {
     }
 
 }
+
+// .my_btn_lighter {
+//     background-color: $secondary-bg-color;
+//     color: $secondary-text-color;
+//     padding: 0.7rem 1rem;
+//     border-radius: 5px;
+//     text-decoration: none;
+//     &:hover{
+//         background-color: $primary-bg-color;
+//         color: $primary-text-color;
+//     }
+
+
+// }

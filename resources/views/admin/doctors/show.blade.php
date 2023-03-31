@@ -13,10 +13,24 @@
     <div class="container card shadow-lg mt-5 mb-5">
         <div class="row ">
             <div class="col-12  col-sm-12 col-lg-6">
-                <div class="my_header d-flex align-items-center m-auto mb-5 mt-5">
-                    <img class="my_avatar card shadow-lg" src="{{ asset("storage/$doctor->photo") }}"
+                <div class="my_header align-items-center m-auto mb-5 mt-5">
+                    <div><img class="my_avatar card shadow-lg d-block" src="{{ asset("storage/$doctor->photo") }}"
                         alt="{{ $doctor->user->name }}'s image profile">
+                    </div>
+                    <div>
+                        <form class="d-block" action="{{ route('admin.doctors.toggle', $doctor->id) }}" method="POST">
+                            @method('PATCH')
+                            @csrf
+                            <button type="submit" title="{{ $doctor->visibility ? 'visibile' : 'non visibile' }}"
+                                class=" btn btn-outline"><i
+                                    class="fa-2x fa-solid fas fa-fw {{ $doctor->visibility ? 'fa-toggle-on' : 'fa-toggle-off' }}"></i></button>
+                                    <span>
+                                        (renditi visibile o meno ai pazienti)
+                                    </span>
+                        </form>
+                    </div>
                 </div>
+                
             </div>
             <div class="col-12  col-sm-12 col-lg-6">
                 <h1 class="ms-5 text-center fw-bold text-uppercase my_header d-flex align-items-center m-4">
@@ -42,7 +56,7 @@
 
 
             </div>
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-12 ">
                     <div class="blue-box w-100">
                         <h2>Visibilità</h2>
@@ -66,10 +80,10 @@
 
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="row">
                 <div class="col-12">
-                    <div class="blue-box w-100">
+                    <div class="blue-box text-center">
                         <h2>Informazioni formazione e lavoro</h2>
                     </div>
                 </div>

@@ -1,29 +1,31 @@
 @use '_variables.scss' as *;
 
-section.sponsor {
-    .card {
+section.profile {
+    .card{
         border-radius: 30px;
-        overflow: hidden;
-        border: none;
-        padding: 0;
 
-        .type-sponsor {
-            background-color: $secondary-bg-color;
+        #my-edit-btn{
+            color: $secondary-text-color;
+            background-color: $pine-green;
+            &:hover{
+                background-color: $primary-bg-color;
+                color: $secondary-text-color;
+            }
         }
 
         .my-btn {
             text-decoration: none;
-            border-radius: 25px;
+            font-weight: 600;
+            border-radius: 15px;
             color: $secondary-text-color;
             background-color: $primary-text-color;
-            padding: .5rem 1rem;
+            padding: .7rem 1.2rem;
             transition: .25s;
-            border: 0px;
+            border: none;
             &:hover{
                 background-color: $secondary-bg-color;
                 color: $secondary-text-color;
             }
         }
-        
     }
 }

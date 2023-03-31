@@ -165,8 +165,8 @@ textarea:valid {
     border-style: solid;
     border-width: 1px;
     border-radius: 3px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
     display: inline-block;
 }
 
@@ -187,7 +187,7 @@ textarea:valid {
     background-color: #8bdda8;
     color: white;
 }
-=========
+
 .sponsorship{
     color: $secondary-text-color;
     background-color: $pine-green;
@@ -214,4 +214,4 @@ textarea:valid {
 
 
 // }
->>>>>>>>> Temporary merge branch 2
+

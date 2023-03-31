@@ -10,10 +10,10 @@
         </div>
     @endif
 
-    <table class="table w-75 m-auto">
+    <h2 class="text-center">Acquista un sponsorizzazione per rimanere in homepage!</h2>
+    <table class="table w-75 m-auto text-center">
         <thead>
             <tr class="text-dark">
-                <th scope="col">id</th>
                 <th scope="col">Price</th>
                 <th scope="col">Duration</th>
                 <th scope="col">Specifics</th>
@@ -24,7 +24,6 @@
         @foreach ($sponsorships as $sponsorship)
         <tbody>
             <tr class="text-dark">
-                <td>{{ $sponsorship->id }}</td>
                 <td>{{ $sponsorship->price }} &euro;</td>
                 <td>{{ $sponsorship->duration }} ore</td>
                 <td class="text-capitalize">{{ $sponsorship->specifics}}</td>

@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="dashboard">
-    <div class="container my_container mb-5">
+    <div class="container my_container shadow-lg mb-5">
     
         {{-- Welcome message --}}
         @if (Auth::user())

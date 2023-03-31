@@ -18,17 +18,17 @@ $sponsorships = $user->sponsorships;
 
     <div>
         @if($sponsorships->count() > 0)
-        <h5> 
+        <h5 class=" text-center"> 
             Sponsorizzazione Attiva:
         </h5>
         @foreach($sponsorships as $sponsorship)
-            <h4 class="fw-bold">
+            <h4 class="fw-bold text-capitalize text-center">
                 {{ $sponsorship->specifics}}
             </h4>
         @endforeach
         @else
-            <p>Nessuna sponsorizzazione è stata acquistata.</p>
-            <a href="{{ route('admin.sponsorships.index')}}">Acquistane una ora</a>
+            <p class=" text-center">Nessuna sponsorizzazione è stata acquistata. Aquistane una per rimanere in homepage!</p>
+            <p class=" text-center"><a class="btn-dash" href="{{ route('admin.sponsorships.index')}}">Acquistane una ora</a></p>
         @endif
     </div>
 </section>

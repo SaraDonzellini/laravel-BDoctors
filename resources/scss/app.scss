@@ -109,3 +109,8 @@ textarea:invalid {
 textarea:valid {
     border: 2px solid black;
 }
+
+.text-review-index,
+.text-message-index{
+    color:$primary-text-color;
+}

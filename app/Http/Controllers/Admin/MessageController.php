@@ -48,7 +48,7 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
-        return view('admin.messages.show', compact('message'));
+        // return view('admin.messages.show', compact('message'));
     }
 
     /**

@@ -55,7 +55,15 @@ header {
 }
 
 .my_avatar {
-    width: 50%;
+    width: 100%;
+
+}
+
+.blue-box {
+    background-color: $primary-bg-color;
+    height: 50px;
+    color: white;
+    border-radius: 5px;
 }
 
 .my_btn {
@@ -64,13 +72,12 @@ header {
     padding: 0.7rem 1rem;
     border-radius: 5px;
     text-decoration: none;
+    &:hover{
+        background-color: $secondary-bg-color;
+        color: $secondary-text-color;
+    }
 
 
-}
-
-div.my_divbox a:hover {
-    background-color: $secondary-bg-color;
-    color: $secondary-text-color;
 }
 
 .bg-spons,
@@ -109,3 +116,30 @@ textarea:invalid {
 textarea:valid {
     border: 2px solid black;
 }
+
+.sponsorship{
+    color: $secondary-text-color;
+    background-color: $pine-green;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    &:hover{
+        background-color: $primary-text-color;
+        color: $secondary-bg-color;
+    }
+
+}
+
+// .my_btn_lighter {
+//     background-color: $secondary-bg-color;
+//     color: $secondary-text-color;
+//     padding: 0.7rem 1rem;
+//     border-radius: 5px;
+//     text-decoration: none;
+//     &:hover{
+//         background-color: $primary-bg-color;
+//         color: $primary-text-color;
+//     }
+
+
+// }

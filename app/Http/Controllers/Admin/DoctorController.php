@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
+use App\Models\Review;
 use App\Models\Specialization;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -116,8 +117,8 @@ class DoctorController extends Controller
     public function show(Doctor $doctor)
     {
         $doctors = Doctor::with('user', 'specializations')->get();
-
-        return view('admin.doctors.show', compact('doctor'));
+        $review = Review::where('user_id', Auth::user()->id)->latest()->get();
+        return view('admin.doctors.show', compact('doctor', 'review'));
     }
 
     /**

@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
+@section('title', "Sponsorizzazioni")
 
 @section('content')
+
     <div class="view">
         <div class="container ">
             @if (session('message'))
@@ -11,7 +13,7 @@
             @endif
             <div class="row justify-content-center">
                 <div class="col-12 p-5">
-                    <div class="card p-3 text-start bg-spons">
+                    <div class="card p-5 text-start bg-spons">
                         <div class="card-title text-light d-flex row align-items-center">
                             <div class="col-6">
                                 <h1 class="text-capitalize">
@@ -24,10 +26,15 @@
                                     Una sponsorizzazione che dura {{ $sponsorship->duration }} ore per rimanere in homepage!
                                 </p>
                             </div>
-                            <div class="col-6">
-                                <a href="#" class="btn btn-primary">Acquista</a>
-                            </div>
                         </div>
+                        <script src="https://js.braintreegateway.com/web/dropin/1.36.0/js/dropin.js"></script>
+                        
+                        <div id="dropin-container"></div>
+                        <form method="POST" action="{{ route('sponsor_user') }}">
+                            @csrf
+                            <input type="hidden" name="sponsorship_id" value="{{ $sponsorship->id }}">
+                            <button type="submit" id="submit-button" class="button button--small button--green">Acquista</button>
+                        </form>
                     </div>
                 </div>
             </div>

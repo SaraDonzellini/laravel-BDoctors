@@ -8,6 +8,6 @@
     </div>
 
     <div class="d-flex justify-content-center">
-        <img src="{{asset("storage/$doctor->curriculum")}}" alt="{{$doctor->user->name}}'s curriculum" class="img-fluid">
+        <a href="{{asset("storage/$doctor->curriculum")}}"><img src="{{asset("storage/$doctor->curriculum")}}" alt="{{$doctor->user->name}}'s curriculum" class="img-fluid"></a>
     </div>
 </section>

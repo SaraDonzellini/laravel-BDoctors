@@ -1,0 +1,24 @@
+@use '_variables.scss' as *;
+
+section.sponsor {
+    .card {
+        border-radius: 30px;
+        overflow: hidden;
+        border: none;
+        padding: 0;
+
+        .type-sponsor {
+            background-color: $secondary-bg-color;
+        }
+
+        .my-btn {
+            text-decoration: none;
+            border-radius: 25px;
+            color: $secondary-text-color;
+            background-color: $primary-text-color;
+            padding: .5rem 1rem;
+            transition: .25s;
+            border: 0px;
+        }
+    }
+}

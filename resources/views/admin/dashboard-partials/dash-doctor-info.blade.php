@@ -19,15 +19,16 @@
         </h5>
         
         <p>
+            
             @foreach ($doctor->specializations as $specialization)
-                {{ $specialization->title }}
+                {{ $specialization->title }} |
             @endforeach
         </p>
         <p>
-            {{$doctor->performance}}
+            Prestazione: {{$doctor->performance}}
         </p>
-        <div class="dash-bio">
+        {{-- <div class="dash-bio">
             Biografia: {{$doctor->bio}}
-        </div>
+        </div> --}}
     </div>
 </section>

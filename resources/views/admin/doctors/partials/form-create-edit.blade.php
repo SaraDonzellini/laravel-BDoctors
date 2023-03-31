@@ -79,7 +79,7 @@
 
     <!--Curriculum-->
     <div class="mb-3">
-        <label for="curriculum" class="form-label">Curriculum Vitae (il curriculum deve essere in formato immagine)(*)</label>
+        <label for="curriculum" class="form-label">Curriculum Vitae (Richiesto formato immagine)(*)</label>
         <input type="file" required title="Inserisci un Curriculum Vitae" name="curriculum" id="curriculum" class="form-control @error('curriculum') is-invalid @enderror" value="{{old('curriculum', $doctor->curriculum)}}">
 
         <!--catch error-->
@@ -92,7 +92,7 @@
 
     <!--Visibility-->
     <div class="mb-3">
-        <label for="visibility" class="form-label me-3">Visibile (decidi se renderti visibile o meno ai pazienti)(*)</label>
+        <label for="visibility" class="form-label me-3">Visibile (Decidi se renderti visibile o meno ai pazienti)(*)</label>
         <input type="checkbox" title="decidi se renderti visibile o meno ai pazienti" class="form-check-input @error('visibility') is-invalid @enderror" id="visibility" name="visibility" value="1" {{ old('visibility', $doctor->visibility) ? 'checked' : ''}}>
     </div>
 

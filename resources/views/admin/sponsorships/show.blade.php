@@ -33,7 +33,8 @@
                         <form method="POST" action="{{ route('sponsor_user') }}">
                             @csrf
                             <input type="hidden" name="sponsorship_id" value="{{ $sponsorship->id }}">
-                            <button type="submit" id="submit-button" class="button button--small button--green">Acquista</button>
+                            <a href="{{route('admin.sponsorships.index')}}" class="btn btn-dark me-2 py-2"><i class="fa-solid fa-arrow-left"></i> Torna indietro</a>
+                            <button type="submit" id="submit-button" class="button btn py-2 px-3 button--small button--green">Acquista</button>
                         </form>
                     </div>
                 </div>

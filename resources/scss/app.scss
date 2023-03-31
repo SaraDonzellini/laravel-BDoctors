@@ -55,7 +55,13 @@ header {
 }
 
 .my_avatar {
-    width: 50%;
+    width: 100%;
+
+}
+
+.blue-box {
+    background-color: $primary-bg-color;
+    height: 30px;
 }
 
 .my_btn {

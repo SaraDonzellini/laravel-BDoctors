@@ -125,6 +125,33 @@ textarea:valid {
     border: 2px solid black;
 }
 
+.sponsorship{
+    color: $secondary-text-color;
+    background-color: $pine-green;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    &:hover{
+        background-color: $primary-text-color;
+        color: $secondary-bg-color;
+    }
+
+}
+
+// .my_btn_lighter {
+//     background-color: $secondary-bg-color;
+//     color: $secondary-text-color;
+//     padding: 0.7rem 1rem;
+//     border-radius: 5px;
+//     text-decoration: none;
+//     &:hover{
+//         background-color: $primary-bg-color;
+//         color: $primary-text-color;
+//     }
+
+
+// }
+
 
 // Braintree payment
 .button {
@@ -160,7 +187,7 @@ textarea:valid {
     background-color: #8bdda8;
     color: white;
 }
-
+=========
 .sponsorship{
     color: $secondary-text-color;
     background-color: $pine-green;
@@ -187,3 +214,4 @@ textarea:valid {
 
 
 // }
+>>>>>>>>> Temporary merge branch 2

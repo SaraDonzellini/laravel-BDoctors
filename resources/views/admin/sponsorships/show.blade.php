@@ -19,9 +19,9 @@
                                 <h1 class="text-capitalize">
                                     {{ $sponsorship->specifics }}
                                 </h1>
-                                <p>
-                                    {{ $sponsorship->price }} &euro;
-                                </p>
+                                <h5 class="mb-4">
+                                    Prezzo: {{ $sponsorship->price }} &euro;
+                                </h5>
                                 <p>
                                     Una sponsorizzazione che dura {{ $sponsorship->duration }} ore per rimanere in homepage!
                                 </p>

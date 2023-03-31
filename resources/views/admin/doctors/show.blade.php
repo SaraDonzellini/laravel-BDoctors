@@ -103,7 +103,7 @@
                 <div class="col-12 col-sm-12 col-lg-6 ">
                     <div class="box ">
                         <h5 class="m-5">Curriculum: </h5>
-                        <img class="my_curriculum card" src="{{ asset("storage/$doctor->curriculum") }}"
+                        <img class="m-5 my_curriculum card" src="{{ asset("storage/$doctor->curriculum") }}"
                             alt="{{ $doctor->user->name }}'s curriculum">
 
                     </div>

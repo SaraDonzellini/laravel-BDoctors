@@ -28,7 +28,7 @@ class Sponsor_UserController extends Controller
 
         $user->sponsorships()->attach($sponsorshipId);
 
-        return redirect()->back()->with('message', 'Sponsorizzazione acquistata con successo!');
+        return redirect()->back()->with('message', 'Sponsorizzazione acquistata con successo!')->with('alert-type', 'success');;
     }
 
     /**

@@ -204,6 +204,146 @@ class DoctorSeeder extends Seeder
                 'bio' => 'Dottore con laurea in Medicina e chirurgia dal 1991 ottenuta a Torino. Sono iscritto all\'albo Provinciale dei Medici Chirurghi di TORINO dal 25/05/1992. Attualmente lavora in provincia di TO.
             Mi occupo della prevenzione, della valutazione e della cura delle malattie che coinvolgono la popolazione anziana (Malattia di Alzheimer e Demenze, Malattia di Parkinson e Disturbi del Movimento, Malattie Cerebrovascolari,valutazione della non autosufficienza con certificazione per pensione d\'invalidità e di accompagno e legge 104, completi di scale di valutazione ),effettuando Test per Disturbi della Memoria e della Cognitività, dell\'Umore e del Comportamento, affrontando non solo le problematiche cliniche acute, post-acute e croniche , ma anche quelle psicologiche e socio-economiche.'
             ],
+            [
+                'address' => 'Via Roma 1, Milano',
+                'curriculum' => 'imgs/Curriculum_1.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => 'Sono il Dott. Marco Rossi, specialista in chirurgia plastica e ricostruttiva. Sono appassionato del mio lavoro e dedico tutto il mio tempo a migliorare la vita dei miei pazienti. Ho una vasta esperienza in interventi di rinoplastica, liposuzione e mastoplastica additiva.'
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/curriculum_3.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => 'Salve, sono la Dott.ssa Maria Bianchi, ginecologa ed ostetrica. Ho scelto di dedicarmi alla cura della salute delle donne e mi sono specializzata in particolare nella diagnosi e terapia delle patologie del sistema riproduttivo femminile. Sono una professionista attenta, empatica e disponibile.'
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/curriculum_5.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => 'Sono il Dott. Andrea Neri, medico di base con oltre 20 anni di esperienza nel settore. Offro ai miei pazienti una vasta gamma di servizi sanitari, dalla prevenzione alla diagnosi e cura di patologie comuni. Sono sempre disponibile per ascoltare le loro esigenze e fornire loro le migliori cure possibili.'
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/curriculum_3.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => 'Buongiorno, sono il Dott. Matteo Bianchi, psicologo clinico. Offro un approccio integrato alla cura della salute mentale, utilizzando tecniche cognitive, comportamentali e psicodinamiche per aiutare i miei pazienti a superare le difficoltà. Sono appassionato del mio lavoro e credo che la salute mentale sia un diritto di tutti.'
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/curriculum_3.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => 'Sono la Dott.ssa Sara Verdi, dentista con oltre 15 anni di esperienza nella cura della salute orale. Offro servizi di igiene dentale, sbiancamento, riabilitazione protesica e implantologia. Sono sempre disponibile a rispondere alle domande dei miei pazienti e a fornire loro la migliore assistenza possibile.'
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/curriculum_1.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => 'Salve, sono il Dott. Paolo Bianchi, dermatologo. Sono specializzato nella diagnosi e cura delle patologie della pelle, dalla dermatite atopica alle malattie autoimmuni. Utilizzo le tecniche più avanzate e innovative per garantire ai miei pazienti il miglior trattamento possibile.'
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/curriculum_3.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Sono la Dott.ssa Laura Neri, pediatra. Ho una vasta esperienza nella cura della salute dei bambini, dalla nascita all'adolescenza. Offro servizi di prevenzione, diagnosi e cura di patologie comuni, ma anche di disturbi dello sviluppo e della crescita. Sono sempre a disposizione dei genitori per rispondere alle loro domande e fornire loro il supporto necessario."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/curriculum_2.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Buongiorno, sono il Dott. Marco Verdi, cardiologo. Offro servizi di prevenzione, diagnosi e cura delle malattie cardiovascolari, dal controllo della pressione arteriosa alla gestione dell'infarto del miocardio. Sono appassionato della mia professione e lavoro ogni giorno per garantire ai miei pazienti la migliore qualità della vita possibile."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/Curriculum_5.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Sono il Dott. Alessandro Neri, neurologo. Ho una vasta esperienza nella diagnosi e cura delle malattie del sistema nervoso, dal morbo di Alzheimer all'ictus. Utilizzo le tecniche più avanzate per garantire ai miei pazienti il miglior trattamento possibile. Sono sempre disponibile per ascoltare le loro esigenze e fornire loro il supporto necessario."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/Curriculum_4.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Salve, sono la Dott.ssa Giulia Bianchi, psichiatra. Offro servizi di diagnosi e cura dei disturbi mentali, dal disturbo bipolare alla schizofrenia. Utilizzo un approccio integrato che comprende psicoterapia, farmacoterapia e altre tecniche. Sono appassionata del mio lavoro e credo che ogni paziente meriti un approccio personalizzato e attento alle sue esigenze."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/Curriculum_4.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Sono il Dott. Davide Verdi, ortopedico. Sono specializzato nella diagnosi e cura delle patologie dell'apparato muscolo-scheletrico, dalle fratture alle malattie articolari. Offro servizi di consulenza, terapia fisica, riabilitazione e chirurgia ortopedica. Sono sempre a disposizione dei miei pazienti per rispondere alle loro domande e fornire loro la migliore assistenza possibile."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/Curriculum_2.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Buongiorno, sono la Dott.ssa Federica Rossi, endocrinologa. Sono specializzata nella diagnosi e cura delle patologie del sistema endocrino, dal diabete all'ipotiroidismo. Offro servizi di consulenza, terapia farmacologica e monitoraggio della salute endocrina. Sono sempre a disposizione dei miei pazienti per fornire loro il supporto necessario."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/Curriculum_1.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Sono il Dott. Carlo Bianchi, urologo. Sono specializzato nella diagnosi e cura delle patologie del sistema uro-genitale maschile, dalla prostatite all'ipertrofia prostatica benigna. Offro servizi di consulenza, terapia farmacologica e chirurgia urologica. Sono sempre a disposizione dei miei pazienti per rispondere alle loro domande e fornire loro il supporto necessario."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/Curriculum_3.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Sono la Dott.ssa Martina Moretti, dermatologa. Sono specializzata nella diagnosi e cura delle patologie della pelle, dalle dermatiti alle neoplasie cutanee. Offro servizi di consulenza, terapia farmacologica e chirurgia dermatologica. Sono sempre a disposizione dei miei pazienti per rispondere alle loro domande e fornire loro il supporto necessario."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/Curriculum_5.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Salve, sono il Dott. Marco Rossi, cardiologo. Sono specializzato nella diagnosi e cura delle patologie del cuore, dalle aritmie alle malattie coronariche. Offro servizi di consulenza, terapia farmacologica, monitoraggio della salute cardiaca e interventi chirurgici. Sono sempre a disposizione dei miei pazienti per fornire loro il supporto necessario."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/Curriculum_5.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Sono la Dott.ssa Paola Ferrari, ginecologa. Sono specializzata nella diagnosi e cura delle patologie dell'apparato genitale femminile, dal papilloma virus alle malattie dell'utero. Offro servizi di consulenza, terapia farmacologica e chirurgia ginecologica. Sono sempre a disposizione delle mie pazienti per rispondere alle loro domande e fornire loro il supporto necessario."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/Curriculum_4.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Sono il Dott. Andrea Bianchi, oculista. Sono specializzato nella diagnosi e cura delle patologie degli occhi, dal glaucoma alla degenerazione maculare. Offro servizi di consulenza, terapia farmacologica, correzione visiva e chirurgia oftalmica. Sono sempre a disposizione dei miei pazienti per fornire loro il supporto necessario."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/Curriculum_3.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Sono la Dott.ssa Laura Conte, pediatra. Sono specializzata nella diagnosi e cura delle patologie dei bambini, dalla febbre alle malattie respiratorie. Offro servizi di consulenza, monitoraggio della crescita e dello sviluppo, terapia farmacologica e vaccinazioni. Sono sempre a disposizione dei miei piccoli pazienti e delle loro famiglie per rispondere alle loro domande e fornire loro il supporto necessario."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/Curriculum_1.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Sono il Dott. Francesco Bianchi, pneumologo. Sono specializzato nella diagnosi e cura delle patologie dei polmoni, dall'asma alla broncopneumopatia cronica ostruttiva. Offro servizi di consulenza, terapia farmacologica, monitoraggio della funzionalità polmonare e interventi chirurgici. Sono sempre a disposizione dei miei pazienti per fornire loro il supporto necessario."
+            ],
+            [
+                'address' => 'Via S. Cristoforo, 45',
+                'curriculum' => 'imgs/Curriculum_2.png',
+                'photo' => 'imgs/avatar_placeholder.jpg',
+                'phone' => '3172579652',
+                'bio' => "Sono la Dott.ssa Eleonora Neri, gastroenterologa. Sono specializzata nella diagnosi e cura delle patologie dell'apparato digerente, dalla gastrite alla colite. Offro servizi di consulenza, terapia farmacologica, endoscopia digestiva e interventi chirurgici. Sono sempre a disposizione dei miei pazienti per rispondere alle loro domande e fornire loro il supporto necessario."
+            ],
         ];
         $performances = ['Visita specialistica', 'Consulenza', 'Diagnosi', 'Certificazione'];
 

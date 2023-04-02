@@ -3,12 +3,12 @@
 @section('title', 'Dashboard')
 
 @section('content')
-<section class="dashboard">
-    <div class="container my_container shadow-lg mb-5">
+<section class="dashboard mt-4">
+    <div class="container my_container shadow-lg">
     
         {{-- Welcome message --}}
         @if (Auth::user())
-        <h2 class="fs-4 text-light text-center my-5">
+        <h2 class="fs-4 text-light text-center p-4">
             Benvenuto/a {{ $user->name }}
         </h2>
     

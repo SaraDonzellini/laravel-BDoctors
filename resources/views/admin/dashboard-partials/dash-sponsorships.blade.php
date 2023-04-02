@@ -28,7 +28,7 @@ $sponsorships = $user->sponsorships;
         @endforeach
         @else
             <p class=" text-center">Nessuna sponsorizzazione è stata acquistata. Aquistane una per rimanere in homepage!</p>
-            <p class=" text-center"><a class="btn-dash" href="{{ route('admin.sponsorships.index')}}">Acquistane una ora</a></p>
+            <p class=" text-center"><a class="btn-buy p-2 text-light rounded" href="{{ route('admin.sponsorships.index')}}">Acquistane una ora</a></p>
         @endif
     </div>
 </section>

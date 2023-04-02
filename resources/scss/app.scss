@@ -14,7 +14,7 @@ body {
     //backdrop-filter: blur(10px);
 
     a.btn-dash {
-        border-radius: 15px;
+        border-radius: 12px;
         background-color: $primary-bg-color;
         text-decoration: none;
         color: $primary-text-color;
@@ -92,6 +92,10 @@ header {
 .bg-message,
 .bg-review {
     background-color: $secondary-bg-color;
+}
+
+.bg-dash{
+    background-color: $primary-text-color;
 }
 
 
@@ -185,4 +189,10 @@ textarea:valid {
 .text-review-index,
 .text-message-index{
     color:$primary-text-color;
+}
+.btn-buy{
+    background-color: $secondary-bg-color;
+    color: white ;
+    padding: 1 2rem;
+    text-decoration: none;
 }

@@ -9,11 +9,11 @@
 
     {{-- Doctor's photo --}}
     <div class="d-flex justify-content-center">
-        <img src="{{asset("storage/$doctor->photo")}}" alt="{{$doctor->user->name}}'s image profile" class="doctor-profile-img img-fluid">
+        <img src="{{asset("storage/$doctor->photo")}}" alt="{{$doctor->user->name}}'s image profile" class="rounded img-fluid shadow">
     </div>
     
     {{-- Doctor's infos --}}
-    <div class="p-4">
+    <div class=" bg-message text-light mt-3 p-2 rounded">
         <h5>
             {{ $doctor->user->name }} {{ $doctor->user->surname }}
         </h5>

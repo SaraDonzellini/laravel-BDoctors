@@ -10,7 +10,7 @@ $sponsorships = $user->sponsorships;
 
 <section>
     <div class="d-flex justify-content-center p-4">
-        {{-- Route to sponsorhips --}}
+        {{-- Route to sponsorships --}}
         <a href="#" class="btn-dash position-dash">
             Sponsorizzazioni
         </a>

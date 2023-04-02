@@ -21,7 +21,7 @@ class SponsorshipUserSeeder extends Seeder
         $sponsorshipsIds = Sponsorship::all()->pluck('id');
 
         foreach ($users as $user) {
-            $user->sponsorhips()->attach($faker->randomElements($sponsorshipsIds, 1));
+            $user->sponsorships()->attach($faker->randomElements($sponsorshipsIds, 1));
         }
     }
 }

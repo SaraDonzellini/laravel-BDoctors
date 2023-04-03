@@ -1,1 +1,198 @@
-@import '~bootstrap/scss/bootstrap'
+@use 'partials/variables' as *;
+@use 'partials/view-login' as *;
+@use 'partials/view-dashboard' as*;
+@use 'partials/view-sponsorships' as*;
+@use 'partials/view-profile-doctor' as *;
+@import '~bootstrap/scss/bootstrap';
+
+
+
+body {
+    background-image: url('/public/assets/imgs/Bg-image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    //backdrop-filter: blur(10px);
+
+    a.btn-dash {
+        border-radius: 12px;
+        background-color: $primary-bg-color;
+        text-decoration: none;
+        color: $primary-text-color;
+        padding: .5rem 1rem;
+        font-weight: bold;
+
+        &.position-dash {
+            position: absolute;
+            top: -20px;
+        }
+    }
+
+    .my-card {
+        border-radius: 25px;
+        border-width: 0 !important;
+        background-color: $secondary-text-color !important;
+        padding: 3rem;
+
+        .doctor-profile-img {
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 25px;
+        }
+    }
+}
+
+header {
+    nav {
+        background-color: $primary-bg-color;
+    }
+
+    a {
+        color: $primary-text-color !important;
+    }
+}
+
+.my_container{
+    background-color: $secondary-bg-color;
+    border-radius: 50px;
+}
+
+.my_curriculum {
+    width: 80%;
+}
+
+.my_header {
+    width: 50%;
+}
+
+.my_avatar {
+    width: 100%;
+
+}
+
+.blue-box {
+    background-color: $secondary-bg-color;
+    color: white;
+}
+
+.my_btn {
+    background-color: $primary-bg-color;
+    color: $primary-text-color;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    &:hover{
+        background-color: $secondary-bg-color;
+        color: $secondary-text-color;
+    }
+
+
+}
+
+.bg-spons,
+.bg-message,
+.bg-review {
+    background-color: $secondary-bg-color;
+}
+
+.bg-dash{
+    background-color: $primary-text-color;
+}
+
+
+.my_registration_card {
+    background-color: $secondary-bg-color;
+    color: $secondary-text-color;
+}
+
+
+input:invalid {
+    border: 2px dashed red;
+}
+
+input:valid {
+    border: 2px solid black;
+}
+
+select:invalid {
+    border: 2px dashed red;
+}
+
+select:valid {
+    border: 2px solid black;
+}
+
+textarea:invalid {
+    border: 2px dashed red;
+}
+
+textarea:valid {
+    border: 2px solid black;
+}
+
+.sponsorship{
+    color: $secondary-text-color;
+    background-color: $pine-green;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    &:hover{
+        background-color: $primary-text-color;
+        color: $secondary-bg-color;
+    }
+
+}
+
+// Braintree payment
+.button {
+    cursor: pointer;
+    font-weight: 500;
+    left: 3px;
+    line-height: inherit;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 7px;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    display: inline-block;
+}
+
+.button--small {
+    font-size: 1rem;
+}
+
+.button--green {
+    outline: none;
+    background-color: $primary-text-color;
+    color: white;
+    transition: .25s;
+}
+
+.button--green:hover {
+    background-color: $pine-green;
+    color: white;
+}
+
+.sponsorship{
+    color: $secondary-text-color;
+    background-color: $pine-green;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    &:hover{
+        background-color: $primary-text-color;
+        color: $secondary-bg-color;
+    }
+
+}
+
+.text-review-index,
+.text-message-index{
+    color:$primary-text-color;
+}
+.btn-buy{
+    background-color: $secondary-bg-color;
+    color: white ;
+    padding: 1 2rem;
+    text-decoration: none;
+}

@@ -1,0 +1,18 @@
+$sponsorships = 
+[
+    [
+        'price' => '2.99',
+        'duration' => '24',
+        'specifics' =>  'bronze',
+    ],
+    [
+        'price' => '5.99',
+        'duration' => '72',
+        'specifics' =>  'silver',
+    ],
+    [
+        'price' => '9.99',
+        'duration' => '144',
+        'specifics' =>  'gold',
+    ]
+]

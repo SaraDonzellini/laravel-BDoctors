@@ -1,6 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\SponsorshipController as SponsorshipController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\DoctorController;
+use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\Sponsor_UserController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +21,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AuthenticatedSessionController::class, 'create'])
+    ->name('login');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::patch('/{doctor}/toggle', [DoctorController::class, 'enableToggle'])->name('doctors.toggle');
+    Route::resource('doctors', DoctorController::class);
+    Route::resource('messages', MessageController::class);
+    Route::resource('sponsorships', SponsorshipController::class);
+    Route::resource('reviews', ReviewController::class);
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -28,4 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::post('/sponsor_user', [Sponsor_UserController::class, 'associateSponsorshipWithUser'])
+    ->middleware('auth')
+    ->name('sponsor_user');
+
+require __DIR__ . '/auth.php';

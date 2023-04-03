@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Doctor;
+use App\Models\Specialization;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -20,7 +22,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        $specializations = Specialization::all();
+        return view('auth.register', compact('specializations'));
     }
 
     /**
@@ -32,20 +35,46 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'surname' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'address' => ['required', 'string'],
+            'specializations' => ['required', 'array', 'min:1', 'exists:specializations,id']
         ]);
 
         $user = User::create([
             'name' => $request->name,
+            'surname' => $request->surname,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
+        $user->save();
+
+        // dd($request->address);
+
+        $doctor = new Doctor([
+            'address' => $request->address,
+            'bio' => '',
+            'curriculum' => '',
+            'photo' => '',
+            'phone' => '',
+            'performance' => '',
+            'visibility' => true,
+        ]);
+
+        $doctor->user()->associate($user);
+        $doctor->save();
+
+        // dd($request->specializations);
+
+        $specializations = $request->specializations;
+        foreach ($specializations as $specialization) {
+            $doctor->specializations()->attach($specialization);
+        }
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect()->route('admin.doctors.create');
     }
 }

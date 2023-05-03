@@ -23,7 +23,7 @@ class MessageSeeder extends Seeder
             $newMessage->name = $faker->unique()->firstName();
             $newMessage->surname = $faker->unique()->lastName();
             $newMessage->text = $faker->unique()->realText();
-            $newMessage->email = $faker->unique()->email();;
+            $newMessage->email = $faker->unique()->email();
             $newMessage->save();
         }
     }
